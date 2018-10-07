@@ -1,6 +1,6 @@
 PKG_LIBS = -L${LIB_HDF5}/lib${R_ARCH} -lhdf5 -lhdf5_hl -lz -lm 
 PKG_CPPFLAGS=
-PKG_CFLAGS=-I${LIB_HDF5}/include/hdf5 -I${LIB_HDF5}/include/hdf5_hl -I${LIB_HDF5}/include/cmakeconf -I1_8_14 -I. -D_DEFINE_H5FREE_MEMORY_=0 -D__USE_MINGW_ANSI_STDIO
+PKG_CFLAGS=-I${LIB_HDF5}/include/hdf5 -I${LIB_HDF5}/include/hdf5_hl -I${LIB_HDF5}/include/cmakeconf -I1_8_14 -I. -D__USE_MINGW_ANSI_STDIO
 
 .PHONY: all copy_auto_files
 

@@ -221,7 +221,7 @@ This function implements the HDF5-API function H5Rcreate. The parameters are int
 The function always create \code{H5R_DATASET_REGION} references
 Please see the documentation at \url{https://www.hdfgroup.org/HDF5/doc/RM/RM_H5R.html#Reference-Create} for details.}
 
-\item{\code{print(..., max.attributes)}}{
+\item{\code{print(..., max.attributes = 10)}}{
 
 Prints information for the dataset
 
@@ -330,6 +330,11 @@ Please see the documentation at \url{https://www.hdfgroup.org/HDF5/doc/RM/RM_H5A
 
 This function implements the HDF5-API function H5Aget_name_by_idx.
 Please see the documentation at \url{https://www.hdfgroup.org/HDF5/doc/RM/RM_H5A.html#Annot-GetNameByIdx} for details.}
+
+\item{\code{attr_get_number()}}{
+
+This function implements the HDF5-API function H5Aget_num_attrs.
+Please see the documentation at \url{https://support.hdfgroup.org/HDF5/doc/RM/RM_H5A.html#Annot-NumAttrs} for details.}
 
 \item{\code{flush(scope = h5const$H5F_SCOPE_GLOBAL)}}{
 
