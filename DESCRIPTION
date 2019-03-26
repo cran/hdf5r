@@ -1,7 +1,7 @@
 Package: hdf5r
 Type: Package
 Title: Interface to the 'HDF5' Binary Data Format
-Version: 1.0.1
+Version: 1.1.1
 Authors@R: c(
     person("Holger", "Hoefling", email = "hhoeflin@gmail.com", role = c("aut", "cre")),
     person("Mario", "Annau", email = "mario.annau@gmail.com", role = "aut"),
@@ -26,7 +26,7 @@ Suggests: testthat, knitr, rmarkdown, nycflights13, reshape2,
 SystemRequirements: HDF5 (>= 1.8.13)
 VignetteBuilder: knitr
 NeedsCompilation: yes
-RoxygenNote: 6.0.1.9001
+RoxygenNote: 6.1.1.9000
 Collate: 'Common_functions.R' 'Compound.R' 'H5constants.R'
         'Helper_functions.R' 'Misc.R' 'R6Classes.R' 'R6Classes_H5A.R'
         'R6Classes_H5D.R' 'R6Classes_H5File.R' 'R6Classes_H5Group.R'
@@ -34,10 +34,10 @@ Collate: 'Common_functions.R' 'Compound.R' 'H5constants.R'
         'R6Classes_H5T.R' 'adapt_during_onLoad.R' 'convert.R'
         'factor_ext.R' 'globalVariables.R' 'h5errorHandling.R'
         'h5wrapper.R' 'hdf5r.R' 'high_level_UI.R' 'open_objs.R' 'zzz.R'
-Packaged: 2018-09-30 14:09:24 UTC; hhoeflin
+Packaged: 2019-03-25 19:32:12 UTC; hhoeflin
 Author: Holger Hoefling [aut, cre],
   Mario Annau [aut],
   Novartis Institute for BioMedical Research (NIBR) [cph]
 Maintainer: Holger Hoefling <hhoeflin@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-10-07 22:20:04 UTC
+Date/Publication: 2019-03-26 12:50:03 UTC

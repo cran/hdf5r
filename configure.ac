@@ -16,7 +16,7 @@ else
   The required HDF5 library files can be installed as follows:
       - Debian-based (e.g. Debian >= 8.0, Ubuntu >= 15.04): 'sudo apt-get install libhdf5-dev'
         - Old Debian-based (e.g Debian < 8.0, Ubuntu < 15.04): Install from source (see INSTALL)
-        - OS X using Homebrew: 'brew install homebrew/science/hdf5'
+        - OS X using Homebrew: 'brew install hdf5'
         - RPM-based (e.g Fedora): 'sudo yum install hdf5-devel'])
 fi
 
@@ -56,6 +56,12 @@ if test "$hdf5_version_sufficient" = "yes"; then
 	[$HDF5_VERSION], 
 	[ge], 
 	[1.10.3], 
+	[HDF5_VERSION_USE="1_10_3"])
+	
+	AX_COMPARE_VERSION(
+	[$HDF5_VERSION], 
+	[ge], 
+	[1.10.4], 
 	[HDF5_VERSION_USE="1_10_3"])
 fi
 
