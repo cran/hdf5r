@@ -1,7 +1,7 @@
-46d75f820cbdf9e530ffb30140dfdcbd *DESCRIPTION
+d93fadd88f941c7575516453982615ac *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-d1b3682ba1712e9e9e7769aa7373e56d *NEWS.md
+91142eba603d7c7ea7f1492d5f4a3541 *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 4619f6ba3d4dfb902ebbdf25abb3a6bc *R/H5constants.R
@@ -23,7 +23,7 @@ f285596440daaa91d9a9002fdafce0c7 *R/factor_ext.R
 d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 9fec3cb96fb8ca2d15f716d04a08b3be *R/h5wrapper.R
 623d82e5ba8e74335788f728540b94cb *R/hdf5r.R
-1dc6e537cb3473dfb11e2ef16da24ce6 *R/high_level_UI.R
+a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
 3b0eca508c3f14b6374ab4a28f63330c *README.md
@@ -155,7 +155,7 @@ d9c42c342041b7ed02b919b8cc587d93 *inst/CWrappers_1.10.3/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 c0a141539cc05236cecaf79747fe7265 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-afcc0248590506c954ab0801b99e09de *inst/doc/hdf5r.html
+66fe46bab5a649c1245f93e59f587e52 *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
 594fb1644ac98c65adcbf7b7f8f577af *inst/m4/ax_lib_hdf5.m4
@@ -589,7 +589,7 @@ e79f091291aed1a89aece1ee2f79537c *tests/testthat/test-h5a.R
 26ae338e4cc65d3bb57bac1daefb709f *tests/testthat/test-h5p.R
 c01c573ac50e3b7b95abf39ab271d308 *tests/testthat/test-h5s.R
 37279c1eba1219de07e5ebd9fd539341 *tests/testthat/test-h5t.R
-7b26749acf7579b0dbbe0b31ab37d311 *tests/testthat/test-high_level_UI.R
+a7c1c3fa2e3a630fda72cd7bb6aaa5c1 *tests/testthat/test-high_level_UI.R
 cde281c20a1baa701659925d02aee5e7 *tests/testthat/test-links.R
 949e88f5f5cfc126cc2cf79c489d6ae4 *tests/testthat/test-print.R
 ae823cc521a9691e5987d1e67fa73948 *tests/testthat/test-reference.R
