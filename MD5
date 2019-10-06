@@ -1,7 +1,7 @@
-d93fadd88f941c7575516453982615ac *DESCRIPTION
+1e754d3d831e019f2ad373b501221e4f *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-91142eba603d7c7ea7f1492d5f4a3541 *NEWS.md
+9bdd3b86d039040622ee95a871bd1f7c *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 4619f6ba3d4dfb902ebbdf25abb3a6bc *R/H5constants.R
@@ -27,7 +27,7 @@ a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
 3b0eca508c3f14b6374ab4a28f63330c *README.md
-8dc7415da3b61c740b0577cb6a3f6426 *build/vignette.rds
+dcee5f8a768fc1307a6dd3bef4b97dc5 *build/vignette.rds
 c5fde9d9fc5094e4f216b0f98344a521 *cleanup
 fe012eaf6dfa9885ca10b1b21451152b *configure
 965060df22fc4e4a3d93a0bce8461c3b *configure.ac
@@ -155,7 +155,7 @@ d9c42c342041b7ed02b919b8cc587d93 *inst/CWrappers_1.10.3/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 c0a141539cc05236cecaf79747fe7265 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-66fe46bab5a649c1245f93e59f587e52 *inst/doc/hdf5r.html
+d730cd9b2b3d63120a3b0929248e7ffd *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
 594fb1644ac98c65adcbf7b7f8f577af *inst/m4/ax_lib_hdf5.m4
@@ -568,11 +568,11 @@ c37045497ac1bfbf600ba449d0755820 *src/H5Error.h
 c28c7c95aa24f6d0b157144594954c18 *src/H5ls.c
 6a1e74181b4cf40fee41de9efde50ff9 *src/H5ls.h
 d443badc1470a053c2a836f5909e00e9 *src/Makevars.in
-f77a45abd1767a6630c17e784152d00c *src/Makevars.win
+bc462f6ecbc05afc07391d35b4467925 *src/Makevars.win
 fbcde8ed2c0dbbb514123ec08ca73fad *src/README
 9e6a11b7b92da37b309ed9a628ea3816 *src/Wrapper_manual_H5T.c
 466762b4074448a9de0f7af228ff565e *src/Wrapper_manual_H5T.h
-d20a9745f96b5d52cb746e6c258f98fc *src/convert.c
+7f3bc832d126de778046a26a05def8c0 *src/convert.c
 c6eeacf07cf1abf0d50ab4f1a73e7be7 *src/convert.h
 644608e356b2e78fbb7be8c705ac1959 *src/export_manual.h
 feb02e9070a50003fa1d9e2648c99c57 *src/global.h
@@ -606,6 +606,7 @@ f714173024b474619205f752d97ca4aa *tests/testthat/test-zzz-DataSet.R
 1b55429d6ecacc052581ce0d3e7eb52b *tests/testthat/test-zzz-enum.R
 ff4cd4d1cb5071ce842f16e62bc564fa *tests/testthat/test-zzz-io.R
 6d4b61126283579a981bf2676bb016e7 *tests/testthat/test-zzz-vlen.R
+b85b5b6e26e702451973deeacf111211 *tools/winlibs.R
 c702b5d4c7ef0945e249cd7e78ccb7c3 *vignettes/DatatypeConversionDiagram.png
 938fdd450e21a2954fc6972936912245 *vignettes/DatatypeConversionDiagram.xml
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *vignettes/hdf5r.Rmd

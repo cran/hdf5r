@@ -253,7 +253,7 @@ file.h5
 </code></pre>
 
 <pre><code>## Class: H5File
-## Filename: /tmp/Rtmp6KrEbm/file41856fbbcfba.h5
+## Filename: /tmp/RtmpEHST9I/file46422f7f8df9.h5
 ## Access type: H5F_ACC_RDWR
 </code></pre>
 
@@ -267,18 +267,8 @@ flights.grp &lt;- file.h5$create_group(&quot;flights&quot;)
 
 <pre><code class="r">library(datasets)
 library(nycflights13)
-</code></pre>
-
-<pre><code>## Warning: package &#39;nycflights13&#39; was built under R version 3.5.3
-</code></pre>
-
-<pre><code class="r">library(reshape2)
-</code></pre>
-
-<pre><code>## Warning: package &#39;reshape2&#39; was built under R version 3.5.3
-</code></pre>
-
-<pre><code class="r">mtcars.grp[[&quot;mtcars&quot;]] &lt;- datasets::mtcars
+library(reshape2)
+mtcars.grp[[&quot;mtcars&quot;]] &lt;- datasets::mtcars
 flights.grp[[&quot;weather&quot;]] &lt;- nycflights13::weather
 flights.grp[[&quot;flights&quot;]] &lt;- nycflights13::flights
 </code></pre>
@@ -663,7 +653,7 @@ uint2_ds_none$get_storage_size()
 
 <pre><code>## [1] 35
 ## [1] 26
-## [1] 56
+## [1] 55
 ## [1] 100
 </code></pre>
 
@@ -871,8 +861,8 @@ cat(cpd_several$to_text())
 obj_empty
 </code></pre>
 
-<pre><code>## Warning in format.data.frame(x, digits = digits, na.encode = FALSE):
-## corrupt data frame: columns will be truncated or padded with NAs
+<pre><code>## Warning in format.data.frame(if (omit) x[seq_len(n0), , drop = FALSE] else
+## x, : corrupt data frame: columns will be truncated or padded with NAs
 </code></pre>
 
 <pre><code class="r">obj_empty$Array
