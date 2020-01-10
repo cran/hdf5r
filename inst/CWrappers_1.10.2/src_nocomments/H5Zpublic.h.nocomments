@@ -1,0 +1,248 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef _H5Zpublic_H
+#define _H5Zpublic_H
+
+
+#include "H5public.h"
+
+
+
+
+
+
+
+
+typedef int H5Z_filter_t;
+
+
+#define H5Z_FILTER_ERROR	(-1)	
+#define H5Z_FILTER_NONE		0	
+#define H5Z_FILTER_DEFLATE	1 	
+#define H5Z_FILTER_SHUFFLE      2       
+#define H5Z_FILTER_FLETCHER32   3       
+#define H5Z_FILTER_SZIP         4       
+#define H5Z_FILTER_NBIT         5       
+#define H5Z_FILTER_SCALEOFFSET  6       
+#define H5Z_FILTER_RESERVED     256	
+
+#define H5Z_FILTER_MAX		65535	
+
+
+#define H5Z_FILTER_ALL	 	0	
+#define H5Z_MAX_NFILTERS        32      
+
+
+
+
+
+
+
+
+#define H5Z_FLAG_DEFMASK	0x00ff	
+#define H5Z_FLAG_MANDATORY      0x0000  
+#define H5Z_FLAG_OPTIONAL	0x0001	
+
+
+#define H5Z_FLAG_INVMASK	0xff00	
+#define H5Z_FLAG_REVERSE	0x0100	
+#define H5Z_FLAG_SKIP_EDC	0x0200	
+
+
+
+
+
+#define H5_SZIP_ALLOW_K13_OPTION_MASK   1
+#define H5_SZIP_CHIP_OPTION_MASK        2
+#define H5_SZIP_EC_OPTION_MASK          4
+#define H5_SZIP_NN_OPTION_MASK          32
+#define H5_SZIP_MAX_PIXELS_PER_BLOCK    32
+
+
+#define H5Z_SHUFFLE_USER_NPARMS    0    
+#define H5Z_SHUFFLE_TOTAL_NPARMS   1    
+
+
+#define H5Z_SZIP_USER_NPARMS    2       
+#define H5Z_SZIP_TOTAL_NPARMS   4       
+#define H5Z_SZIP_PARM_MASK      0       
+#define H5Z_SZIP_PARM_PPB       1       
+#define H5Z_SZIP_PARM_BPP       2       
+#define H5Z_SZIP_PARM_PPS       3       
+
+
+#define H5Z_NBIT_USER_NPARMS     0     
+
+
+#define H5Z_SCALEOFFSET_USER_NPARMS      2    
+
+
+
+#define H5Z_SO_INT_MINBITS_DEFAULT 0
+typedef enum H5Z_SO_scale_type_t {
+    H5Z_SO_FLOAT_DSCALE = 0,
+    H5Z_SO_FLOAT_ESCALE = 1,
+    H5Z_SO_INT          = 2
+} H5Z_SO_scale_type_t;
+
+
+#define H5Z_CLASS_T_VERS (1)
+
+
+typedef enum H5Z_EDC_t {
+    H5Z_ERROR_EDC       = -1,   
+    H5Z_DISABLE_EDC     = 0,
+    H5Z_ENABLE_EDC      = 1,
+    H5Z_NO_EDC          = 2     
+} H5Z_EDC_t;
+
+
+#define H5Z_FILTER_CONFIG_ENCODE_ENABLED (0x0001)
+#define H5Z_FILTER_CONFIG_DECODE_ENABLED (0x0002)
+
+
+typedef enum H5Z_cb_return_t {
+    H5Z_CB_ERROR  = -1,
+    H5Z_CB_FAIL   = 0,    
+    H5Z_CB_CONT   = 1,    
+    H5Z_CB_NO     = 2
+} H5Z_cb_return_t;
+
+
+typedef H5Z_cb_return_t (*H5Z_filter_func_t)(H5Z_filter_t filter, void* buf,
+                                size_t buf_size, void* op_data);
+
+
+typedef struct H5Z_cb_t {
+    H5Z_filter_func_t   func;
+    void                *op_data;
+} H5Z_cb_t;
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef htri_t (*H5Z_can_apply_func_t)(hid_t dcpl_id, hid_t type_id, hid_t space_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef herr_t (*H5Z_set_local_func_t)(hid_t dcpl_id, hid_t type_id, hid_t space_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef size_t (*H5Z_func_t)(unsigned int flags, size_t cd_nelmts,
+			     const unsigned int cd_values[], size_t nbytes,
+			     size_t *buf_size, void **buf);
+
+
+
+
+
+typedef struct H5Z_class2_t {
+    int version;                    
+    H5Z_filter_t id;                
+    unsigned encoder_present;       
+    unsigned decoder_present;       
+    const char	*name;              
+    H5Z_can_apply_func_t can_apply; 
+    H5Z_set_local_func_t set_local; 
+    H5Z_func_t filter;              
+} H5Z_class2_t;
+
+H5_DLL herr_t H5Zregister(const void *cls);
+H5_DLL herr_t H5Zunregister(H5Z_filter_t id);
+H5_DLL htri_t H5Zfilter_avail(H5Z_filter_t id);
+H5_DLL herr_t H5Zget_filter_info(H5Z_filter_t filter, unsigned int *filter_config_flags);
+
+
+
+
+
+#ifndef H5_NO_DEPRECATED_SYMBOLS
+
+
+
+
+
+typedef struct H5Z_class1_t {
+    H5Z_filter_t id;		
+    const char	*name;		
+    H5Z_can_apply_func_t can_apply; 
+    H5Z_set_local_func_t set_local; 
+    H5Z_func_t filter;		
+} H5Z_class1_t;
+
+#endif 
+
+#ifdef __cplusplus
+}
+#endif
+#endif
+

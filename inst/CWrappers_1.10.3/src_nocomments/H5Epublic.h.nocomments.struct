@@ -1,0 +1,4 @@
+typedef enum H5E_type_t { H5E_MAJOR, H5E_MINOR} H5E_type_t;
+typedef struct H5E_error2_t { hid_t cls_id; hid_t maj_num; hid_t min_num; unsigned line; const char *func_name; const char *file_name; const char *desc} H5E_error2_t;
+typedef enum H5E_direction_t { H5E_WALK_UPWARD = 0, H5E_WALK_DOWNWARD = 1 } H5E_direction_t;
+typedef struct H5E_error1_t { H5E_major_t maj_num; H5E_minor_t min_num; const char *func_name; const char *file_name; unsigned line; const char *desc} H5E_error1_t;

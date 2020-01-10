@@ -1,0 +1,1 @@
+typedef enum H5LT_lang_t { H5LT_LANG_ERR = -1, H5LT_DDL = 0, H5LT_C = 1, H5LT_FORTRAN = 2, H5LT_NO_LANG = 3 } H5LT_lang_t;

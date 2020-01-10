@@ -1,0 +1,350 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extern "C" {
+
+
+
+
+
+
+    #define H5_GCC_DIAG_STR(s) #s    #define H5_GCC_DIAG_JOINSTR(x,y) H5_GCC_DIAG_STR(x ## y)    #define H5_GCC_DIAG_DO_PRAGMA(x) _Pragma (#x)    #define H5_GCC_DIAG_PRAGMA(x) H5_GCC_DIAG_DO_PRAGMA(GCC diagnostic x)
+    #define H5_GCC_DIAG_OFF(x) H5_GCC_DIAG_PRAGMA(push) H5_GCC_DIAG_PRAGMA(ignored H5_GCC_DIAG_JOINSTR(-W,x))    #define H5_GCC_DIAG_ON(x) H5_GCC_DIAG_PRAGMA(pop)    #define H5_GCC_DIAG_OFF(x)    #define H5_GCC_DIAG_ON(x)
+
+
+
+				        H5_VERS_RELEASE)
+
+       (((H5_VERS_MAJOR==Maj) && (H5_VERS_MINOR==Min) && (H5_VERS_RELEASE>=Rel)) || \        ((H5_VERS_MAJOR==Maj) && (H5_VERS_MINOR>Min)) || \        (H5_VERS_MAJOR>Maj))
+       (((H5_VERS_MAJOR==Maj) && (H5_VERS_MINOR==Min) && (H5_VERS_RELEASE<=Rel)) || \        ((H5_VERS_MAJOR==Maj) && (H5_VERS_MINOR<Min)) || \        (H5_VERS_MAJOR<Maj))
+
+
+
+
+
+
+
+
+
+
+typedef int herr_t;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #include <stdbool.h>  #ifndef __cplusplus    #if defined(H5_SIZEOF_BOOL) && (H5_SIZEOF_BOOL != 0)      #define bool    _Bool    #else      #define bool    unsigned int    #endif    #define true    1    #define false   0  #endif typedef bool hbool_t;
+typedef int htri_t;
+
+
+
+typedef int ssize_t;
+typedef long ssize_t;
+typedef long long ssize_t;
+
+
+
+
+
+H5_GCC_DIAG_OFF(long-long)typedef unsigned long long 	hsize_t;
+typedef signed long long	hssize_t;
+H5_GCC_DIAG_ON(long-long)
+
+
+
+    typedef unsigned                haddr_t;
+    typedef unsigned long           haddr_t;
+    typedef unsigned long long      haddr_t;
+
+
+
+
+    typedef short uint32_t;
+    typedef unsigned int uint32_t;
+    typedef unsigned long uint32_t;
+
+
+
+
+    typedef int int64_t;
+    typedef long int64_t;
+    typedef long long int64_t;
+
+
+
+
+    typedef unsigned uint64_t;
+    typedef unsigned long uint64_t;
+    typedef unsigned long long uint64_t;
+
+
+typedef enum {    H5_ITER_UNKNOWN = -1,           H5_ITER_INC,                    H5_ITER_DEC,                    H5_ITER_NATIVE,                 H5_ITER_N		        } H5_iter_order_t;
+
+
+
+
+
+
+
+
+
+
+
+typedef enum H5_index_t {    H5_INDEX_UNKNOWN = -1,	    H5_INDEX_NAME,		    H5_INDEX_CRT_ORDER,		    H5_INDEX_N			} H5_index_t;
+
+
+
+
+typedef struct H5_ih_info_t {    hsize_t     index_size;     
+    hsize_t     heap_size;
+} H5_ih_info_t;
+
+
+H5_DLL herr_t H5open(void);
+H5_DLL herr_t H5close(void);
+H5_DLL herr_t H5dont_atexit(void);
+H5_DLL herr_t H5garbage_collect(void);
+H5_DLL herr_t H5set_free_list_limits (int reg_global_lim, int reg_list_lim,                int arr_global_lim, int arr_list_lim, int blk_global_lim,                int blk_list_lim);
+H5_DLL herr_t H5get_libversion(unsigned *majnum, unsigned *minnum,				unsigned *relnum);
+H5_DLL herr_t H5check_version(unsigned majnum, unsigned minnum,			       unsigned relnum);
+H5_DLL herr_t H5is_library_threadsafe(hbool_t *is_ts);
+H5_DLL herr_t H5free_memory(void *mem);
+H5_DLL void *H5allocate_memory(size_t size, hbool_t clear);
+H5_DLL void *H5resize_memory(void *mem, size_t size);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,621 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef enum H5T_class_t {    H5T_NO_CLASS         = -1,      H5T_INTEGER          = 0,       H5T_FLOAT            = 1,       H5T_TIME             = 2,       H5T_STRING           = 3,       H5T_BITFIELD         = 4,       H5T_OPAQUE           = 5,       H5T_COMPOUND         = 6,       H5T_REFERENCE        = 7,       H5T_ENUM		 = 8,	    H5T_VLEN		 = 9,	    H5T_ARRAY	         = 10,	
+    H5T_NCLASSES                } H5T_class_t;
+
+
+typedef enum H5T_order_t {    H5T_ORDER_ERROR      = -1,      H5T_ORDER_LE         = 0,       H5T_ORDER_BE         = 1,       H5T_ORDER_VAX        = 2,       H5T_ORDER_MIXED      = 3,       H5T_ORDER_NONE       = 4    
+} H5T_order_t;
+
+
+typedef enum H5T_sign_t {    H5T_SGN_ERROR        = -1,      H5T_SGN_NONE         = 0,       H5T_SGN_2            = 1,   
+    H5T_NSGN             = 2    } H5T_sign_t;
+
+
+typedef enum H5T_norm_t {    H5T_NORM_ERROR       = -1,      H5T_NORM_IMPLIED     = 0,       H5T_NORM_MSBSET      = 1,       H5T_NORM_NONE        = 2    
+} H5T_norm_t;
+
+
+
+
+
+typedef enum H5T_cset_t {    H5T_CSET_ERROR       = -1,      H5T_CSET_ASCII       = 0,       H5T_CSET_UTF8        = 1,       H5T_CSET_RESERVED_2  = 2,       H5T_CSET_RESERVED_3  = 3,       H5T_CSET_RESERVED_4  = 4,       H5T_CSET_RESERVED_5  = 5,       H5T_CSET_RESERVED_6  = 6,       H5T_CSET_RESERVED_7  = 7,       H5T_CSET_RESERVED_8  = 8,       H5T_CSET_RESERVED_9  = 9,       H5T_CSET_RESERVED_10 = 10,      H5T_CSET_RESERVED_11 = 11,      H5T_CSET_RESERVED_12 = 12,      H5T_CSET_RESERVED_13 = 13,      H5T_CSET_RESERVED_14 = 14,      H5T_CSET_RESERVED_15 = 15   } H5T_cset_t;
+
+
+
+
+
+typedef enum H5T_str_t {    H5T_STR_ERROR        = -1,      H5T_STR_NULLTERM     = 0,       H5T_STR_NULLPAD      = 1,       H5T_STR_SPACEPAD     = 2,       H5T_STR_RESERVED_3   = 3,       H5T_STR_RESERVED_4   = 4,       H5T_STR_RESERVED_5   = 5,       H5T_STR_RESERVED_6   = 6,       H5T_STR_RESERVED_7   = 7,       H5T_STR_RESERVED_8   = 8,       H5T_STR_RESERVED_9   = 9,       H5T_STR_RESERVED_10  = 10,      H5T_STR_RESERVED_11  = 11,      H5T_STR_RESERVED_12  = 12,      H5T_STR_RESERVED_13  = 13,      H5T_STR_RESERVED_14  = 14,      H5T_STR_RESERVED_15  = 15   } H5T_str_t;
+
+
+typedef enum H5T_pad_t {    H5T_PAD_ERROR        = -1,      H5T_PAD_ZERO         = 0,       H5T_PAD_ONE          = 1,       H5T_PAD_BACKGROUND   = 2,   
+    H5T_NPAD             = 3    } H5T_pad_t;
+
+
+typedef enum H5T_cmd_t {    H5T_CONV_INIT	= 0,	    H5T_CONV_CONV	= 1, 	    H5T_CONV_FREE	= 2	} H5T_cmd_t;
+
+
+typedef enum H5T_bkg_t {    H5T_BKG_NO		= 0, 	    H5T_BKG_TEMP	= 1,	    H5T_BKG_YES		= 2	} H5T_bkg_t;
+
+
+typedef struct H5T_cdata_t {    H5T_cmd_t		command;
+    H5T_bkg_t		need_bkg;
+    hbool_t		recalc;	
+    void		*priv;	
+} H5T_cdata_t;
+
+
+typedef enum H5T_pers_t {    H5T_PERS_DONTCARE	= -1, 	    H5T_PERS_HARD	= 0,	    H5T_PERS_SOFT	= 1 	} H5T_pers_t;
+
+
+typedef enum H5T_direction_t {    H5T_DIR_DEFAULT     = 0,        H5T_DIR_ASCEND      = 1,        H5T_DIR_DESCEND     = 2     } H5T_direction_t;
+
+
+typedef enum H5T_conv_except_t {    H5T_CONV_EXCEPT_RANGE_HI       = 0,       H5T_CONV_EXCEPT_RANGE_LOW      = 1,       H5T_CONV_EXCEPT_PRECISION      = 2,       H5T_CONV_EXCEPT_TRUNCATE       = 3,       H5T_CONV_EXCEPT_PINF           = 4,       H5T_CONV_EXCEPT_NINF           = 5,       H5T_CONV_EXCEPT_NAN            = 6    } H5T_conv_except_t;
+
+
+typedef enum H5T_conv_ret_t {    H5T_CONV_ABORT      = -1,       H5T_CONV_UNHANDLED  = 0,        H5T_CONV_HANDLED    = 1     } H5T_conv_ret_t;
+
+
+
+typedef struct {    size_t len; 
+    void *p;    
+} hvl_t;
+
+
+
+
+
+
+extern "C" {
+
+typedef herr_t (*H5T_conv_t) (hid_t src_id, hid_t dst_id, H5T_cdata_t *cdata,      size_t nelmts, size_t buf_stride, size_t bkg_stride, void *buf,      void *bkg, hid_t dset_xfer_plist);
+
+
+
+
+typedef H5T_conv_ret_t (*H5T_conv_except_func_t)(H5T_conv_except_t except_type,    hid_t src_id, hid_t dst_id, void *src_buf, void *dst_buf, void *user_data);
+
+
+
+
+
+
+H5_DLLVAR hid_t H5T_IEEE_F32BE_g;
+H5_DLLVAR hid_t H5T_IEEE_F32LE_g;
+H5_DLLVAR hid_t H5T_IEEE_F64BE_g;
+H5_DLLVAR hid_t H5T_IEEE_F64LE_g;
+
+
+
+
+
+H5_DLLVAR hid_t H5T_STD_I8BE_g;
+H5_DLLVAR hid_t H5T_STD_I8LE_g;
+H5_DLLVAR hid_t H5T_STD_I16BE_g;
+H5_DLLVAR hid_t H5T_STD_I16LE_g;
+H5_DLLVAR hid_t H5T_STD_I32BE_g;
+H5_DLLVAR hid_t H5T_STD_I32LE_g;
+H5_DLLVAR hid_t H5T_STD_I64BE_g;
+H5_DLLVAR hid_t H5T_STD_I64LE_g;
+H5_DLLVAR hid_t H5T_STD_U8BE_g;
+H5_DLLVAR hid_t H5T_STD_U8LE_g;
+H5_DLLVAR hid_t H5T_STD_U16BE_g;
+H5_DLLVAR hid_t H5T_STD_U16LE_g;
+H5_DLLVAR hid_t H5T_STD_U32BE_g;
+H5_DLLVAR hid_t H5T_STD_U32LE_g;
+H5_DLLVAR hid_t H5T_STD_U64BE_g;
+H5_DLLVAR hid_t H5T_STD_U64LE_g;
+H5_DLLVAR hid_t H5T_STD_B8BE_g;
+H5_DLLVAR hid_t H5T_STD_B8LE_g;
+H5_DLLVAR hid_t H5T_STD_B16BE_g;
+H5_DLLVAR hid_t H5T_STD_B16LE_g;
+H5_DLLVAR hid_t H5T_STD_B32BE_g;
+H5_DLLVAR hid_t H5T_STD_B32LE_g;
+H5_DLLVAR hid_t H5T_STD_B64BE_g;
+H5_DLLVAR hid_t H5T_STD_B64LE_g;
+H5_DLLVAR hid_t H5T_STD_REF_OBJ_g;
+H5_DLLVAR hid_t H5T_STD_REF_DSETREG_g;
+
+
+
+
+H5_DLLVAR hid_t H5T_UNIX_D32BE_g;
+H5_DLLVAR hid_t H5T_UNIX_D32LE_g;
+H5_DLLVAR hid_t H5T_UNIX_D64BE_g;
+H5_DLLVAR hid_t H5T_UNIX_D64LE_g;
+
+
+
+
+
+H5_DLLVAR hid_t H5T_C_S1_g;
+
+
+
+
+H5_DLLVAR hid_t H5T_FORTRAN_S1_g;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+H5_DLLVAR hid_t H5T_VAX_F32_g;
+H5_DLLVAR hid_t H5T_VAX_F64_g;
+
+
+
+
+
+
+
+
+
+
+H5_DLLVAR hid_t H5T_NATIVE_SCHAR_g;
+H5_DLLVAR hid_t H5T_NATIVE_UCHAR_g;
+H5_DLLVAR hid_t H5T_NATIVE_SHORT_g;
+H5_DLLVAR hid_t H5T_NATIVE_USHORT_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_g;
+H5_DLLVAR hid_t H5T_NATIVE_LONG_g;
+H5_DLLVAR hid_t H5T_NATIVE_ULONG_g;
+H5_DLLVAR hid_t H5T_NATIVE_LLONG_g;
+H5_DLLVAR hid_t H5T_NATIVE_ULLONG_g;
+H5_DLLVAR hid_t H5T_NATIVE_FLOAT_g;
+H5_DLLVAR hid_t H5T_NATIVE_DOUBLE_g;
+H5_DLLVAR hid_t H5T_NATIVE_LDOUBLE_g;
+H5_DLLVAR hid_t H5T_NATIVE_B8_g;
+H5_DLLVAR hid_t H5T_NATIVE_B16_g;
+H5_DLLVAR hid_t H5T_NATIVE_B32_g;
+H5_DLLVAR hid_t H5T_NATIVE_B64_g;
+H5_DLLVAR hid_t H5T_NATIVE_OPAQUE_g;
+H5_DLLVAR hid_t H5T_NATIVE_HADDR_g;
+H5_DLLVAR hid_t H5T_NATIVE_HSIZE_g;
+H5_DLLVAR hid_t H5T_NATIVE_HSSIZE_g;
+H5_DLLVAR hid_t H5T_NATIVE_HERR_g;
+H5_DLLVAR hid_t H5T_NATIVE_HBOOL_g;
+
+
+H5_DLLVAR hid_t H5T_NATIVE_INT8_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT8_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_LEAST8_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_LEAST8_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_FAST8_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_FAST8_g;
+
+H5_DLLVAR hid_t H5T_NATIVE_INT16_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT16_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_LEAST16_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_LEAST16_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_FAST16_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_FAST16_g;
+
+H5_DLLVAR hid_t H5T_NATIVE_INT32_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT32_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_LEAST32_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_LEAST32_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_FAST32_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_FAST32_g;
+
+H5_DLLVAR hid_t H5T_NATIVE_INT64_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT64_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_LEAST64_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_LEAST64_g;
+H5_DLLVAR hid_t H5T_NATIVE_INT_FAST64_g;
+H5_DLLVAR hid_t H5T_NATIVE_UINT_FAST64_g;
+
+
+H5_DLL hid_t H5Tcreate(H5T_class_t type, size_t size);
+H5_DLL hid_t H5Tcopy(hid_t type_id);
+H5_DLL herr_t H5Tclose(hid_t type_id);
+H5_DLL htri_t H5Tequal(hid_t type1_id, hid_t type2_id);
+H5_DLL herr_t H5Tlock(hid_t type_id);
+H5_DLL herr_t H5Tcommit2(hid_t loc_id, const char *name, hid_t type_id,    hid_t lcpl_id, hid_t tcpl_id, hid_t tapl_id);
+H5_DLL hid_t H5Topen2(hid_t loc_id, const char *name, hid_t tapl_id);
+H5_DLL herr_t H5Tcommit_anon(hid_t loc_id, hid_t type_id, hid_t tcpl_id, hid_t tapl_id);
+H5_DLL hid_t H5Tget_create_plist(hid_t type_id);
+H5_DLL htri_t H5Tcommitted(hid_t type_id);
+H5_DLL herr_t H5Tencode(hid_t obj_id, void *buf, size_t *nalloc);
+H5_DLL hid_t H5Tdecode(const void *buf);
+H5_DLL herr_t H5Tflush(hid_t type_id);
+H5_DLL herr_t H5Trefresh(hid_t type_id);
+
+
+H5_DLL herr_t H5Tinsert(hid_t parent_id, const char *name, size_t offset,			 hid_t member_id);
+H5_DLL herr_t H5Tpack(hid_t type_id);
+
+
+H5_DLL hid_t H5Tenum_create(hid_t base_id);
+H5_DLL herr_t H5Tenum_insert(hid_t type, const char *name, const void *value);
+H5_DLL herr_t H5Tenum_nameof(hid_t type, const void *value, char *name,			     size_t size);
+H5_DLL herr_t H5Tenum_valueof(hid_t type, const char *name,			      void *value);
+
+
+H5_DLL hid_t H5Tvlen_create(hid_t base_id);
+
+
+H5_DLL hid_t H5Tarray_create2(hid_t base_id, unsigned ndims,            const hsize_t dim[]);
+H5_DLL int H5Tget_array_ndims(hid_t type_id);
+H5_DLL int H5Tget_array_dims2(hid_t type_id, hsize_t dims[]);
+
+
+H5_DLL herr_t H5Tset_tag(hid_t type, const char *tag);
+H5_DLL char *H5Tget_tag(hid_t type);
+
+
+H5_DLL hid_t H5Tget_super(hid_t type);
+H5_DLL H5T_class_t H5Tget_class(hid_t type_id);
+H5_DLL htri_t H5Tdetect_class(hid_t type_id, H5T_class_t cls);
+H5_DLL size_t H5Tget_size(hid_t type_id);
+H5_DLL H5T_order_t H5Tget_order(hid_t type_id);
+H5_DLL size_t H5Tget_precision(hid_t type_id);
+H5_DLL int H5Tget_offset(hid_t type_id);
+H5_DLL herr_t H5Tget_pad(hid_t type_id, H5T_pad_t *lsb,			  H5T_pad_t *msb);
+H5_DLL H5T_sign_t H5Tget_sign(hid_t type_id);
+H5_DLL herr_t H5Tget_fields(hid_t type_id, size_t *spos,			     size_t *epos, size_t *esize,			     size_t *mpos, size_t *msize);
+H5_DLL size_t H5Tget_ebias(hid_t type_id);
+H5_DLL H5T_norm_t H5Tget_norm(hid_t type_id);
+H5_DLL H5T_pad_t H5Tget_inpad(hid_t type_id);
+H5_DLL H5T_str_t H5Tget_strpad(hid_t type_id);
+H5_DLL int H5Tget_nmembers(hid_t type_id);
+H5_DLL char *H5Tget_member_name(hid_t type_id, unsigned membno);
+H5_DLL int H5Tget_member_index(hid_t type_id, const char *name);
+H5_DLL size_t H5Tget_member_offset(hid_t type_id, unsigned membno);
+H5_DLL H5T_class_t H5Tget_member_class(hid_t type_id, unsigned membno);
+H5_DLL hid_t H5Tget_member_type(hid_t type_id, unsigned membno);
+H5_DLL herr_t H5Tget_member_value(hid_t type_id, unsigned membno, void *value);
+H5_DLL H5T_cset_t H5Tget_cset(hid_t type_id);
+H5_DLL htri_t H5Tis_variable_str(hid_t type_id);
+H5_DLL hid_t H5Tget_native_type(hid_t type_id, H5T_direction_t direction);
+
+
+H5_DLL herr_t H5Tset_size(hid_t type_id, size_t size);
+H5_DLL herr_t H5Tset_order(hid_t type_id, H5T_order_t order);
+H5_DLL herr_t H5Tset_precision(hid_t type_id, size_t prec);
+H5_DLL herr_t H5Tset_offset(hid_t type_id, size_t offset);
+H5_DLL herr_t H5Tset_pad(hid_t type_id, H5T_pad_t lsb, H5T_pad_t msb);
+H5_DLL herr_t H5Tset_sign(hid_t type_id, H5T_sign_t sign);
+H5_DLL herr_t H5Tset_fields(hid_t type_id, size_t spos, size_t epos,			     size_t esize, size_t mpos, size_t msize);
+H5_DLL herr_t H5Tset_ebias(hid_t type_id, size_t ebias);
+H5_DLL herr_t H5Tset_norm(hid_t type_id, H5T_norm_t norm);
+H5_DLL herr_t H5Tset_inpad(hid_t type_id, H5T_pad_t pad);
+H5_DLL herr_t H5Tset_cset(hid_t type_id, H5T_cset_t cset);
+H5_DLL herr_t H5Tset_strpad(hid_t type_id, H5T_str_t strpad);
+
+
+H5_DLL herr_t H5Tregister(H5T_pers_t pers, const char *name, hid_t src_id,			   hid_t dst_id, H5T_conv_t func);
+H5_DLL herr_t H5Tunregister(H5T_pers_t pers, const char *name, hid_t src_id,			     hid_t dst_id, H5T_conv_t func);
+H5_DLL H5T_conv_t H5Tfind(hid_t src_id, hid_t dst_id, H5T_cdata_t **pcdata);
+H5_DLL htri_t H5Tcompiler_conv(hid_t src_id, hid_t dst_id);
+H5_DLL herr_t H5Tconvert(hid_t src_id, hid_t dst_id, size_t nelmts,			  void *buf, void *background, hid_t plist_id);
+
+
+
+
+
+
+
+
+
+
+
+
+
+H5_DLL herr_t H5Tcommit1(hid_t loc_id, const char *name, hid_t type_id);
+H5_DLL hid_t H5Topen1(hid_t loc_id, const char *name);
+H5_DLL hid_t H5Tarray_create1(hid_t base_id, int ndims,            const hsize_t dim[],            const int perm[]);
+H5_DLL int H5Tget_array_dims1(hid_t type_id, hsize_t dims[], int perm[]);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

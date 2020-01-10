@@ -1,0 +1,59 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef _H5Cpublic_H
+#define _H5Cpublic_H
+
+
+#include "H5public.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+typedef enum H5C_cache_incr_mode
+{
+    H5C_incr__off,
+    H5C_incr__threshold
+} H5C_cache_incr_mode;
+
+typedef enum H5C_cache_flash_incr_mode
+{
+     H5C_flash_incr__off,
+     H5C_flash_incr__add_space
+} H5C_cache_flash_incr_mode;
+
+typedef enum H5C_cache_decr_mode
+{
+    H5C_decr__off,
+    H5C_decr__threshold,
+    H5C_decr__age_out,
+    H5C_decr__age_out_with_threshold
+} H5C_cache_decr_mode;
+
+#ifdef __cplusplus
+}
+#endif
+#endif  
