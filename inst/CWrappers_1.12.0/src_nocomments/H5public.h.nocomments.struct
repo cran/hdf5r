@@ -1,0 +1,4 @@
+typedef enum { H5_ITER_UNKNOWN = -1, H5_ITER_INC, H5_ITER_DEC, H5_ITER_NATIVE, H5_ITER_N } H5_iter_order_t;
+typedef enum H5_index_t { H5_INDEX_UNKNOWN = -1, H5_INDEX_NAME, H5_INDEX_CRT_ORDER, H5_INDEX_N } H5_index_t;
+typedef struct H5_ih_info_t { hsize_t index_size; hsize_t heap_size} H5_ih_info_t;
+typedef struct H5O_token_t { uint8_t __data[H5O_MAX_TOKEN_SIZE]} H5O_token_t;

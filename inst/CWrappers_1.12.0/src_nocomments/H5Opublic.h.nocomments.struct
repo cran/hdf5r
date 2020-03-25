@@ -1,0 +1,7 @@
+typedef enum H5O_type_t { H5O_TYPE_UNKNOWN = -1, H5O_TYPE_GROUP, H5O_TYPE_DATASET, H5O_TYPE_NAMED_DATATYPE, H5O_TYPE_MAP, H5O_TYPE_NTYPES } H5O_type_t;
+typedef struct H5O_hdr_info_t { unsigned version; unsigned nmesgs; unsigned nchunks; unsigned flags; H5O_hdr_info_helper_space_t space; H5O_hdr_info_helper_msg_t mesg} H5O_hdr_info_t;
+typedef struct H5O_info2_t { unsigned long fileno; H5O_token_t token; H5O_type_t type; unsigned rc; time_t atime; time_t mtime; time_t ctime; time_t btime; hsize_t num_attrs} H5O_info2_t;
+typedef struct H5O_native_info_t { H5O_hdr_info_t hdr; H5O_info_helper_t meta_size} H5O_native_info_t;
+typedef enum H5O_mcdt_search_ret_t { H5O_MCDT_SEARCH_ERROR = -1, H5O_MCDT_SEARCH_CONT, H5O_MCDT_SEARCH_STOP } H5O_mcdt_search_ret_t;
+typedef struct H5O_stat_t { hsize_t size; hsize_t free; unsigned nmesgs; unsigned nchunks} H5O_stat_t;
+typedef struct H5O_info1_t { unsigned long fileno; haddr_t addr; H5O_type_t type; unsigned rc; time_t atime; time_t mtime; time_t ctime; time_t btime; hsize_t num_attrs; H5O_hdr_info_t hdr; H5O_info_helper_t meta_size} H5O_info1_t;

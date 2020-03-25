@@ -1,0 +1,355 @@
+
+/* typedef struct H5_ih_info_t { hsize_t index_size; hsize_t heap_size} H5_ih_info_t; */
+hid_t create_DT_H5_ih_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5_ih_info_t));
+  H5Tinsert(dtype_id, "index_size", HOFFSET(H5_ih_info_t, index_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "heap_size", HOFFSET(H5_ih_info_t, heap_size), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct { hbool_t corder_valid; H5O_msg_crt_idx_t corder; H5T_cset_t cset; hsize_t data_size} H5A_info_t; */
+hid_t create_DT_H5A_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5A_info_t));
+  H5Tinsert(dtype_id, "corder_valid", HOFFSET(H5A_info_t, corder_valid), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "corder", HOFFSET(H5A_info_t, corder), h5_datatype[DT_H5O_msg_crt_idx_t]);
+  H5Tinsert(dtype_id, "cset", HOFFSET(H5A_info_t, cset), h5_datatype[DT_H5T_cset_t]);
+  H5Tinsert(dtype_id, "data_size", HOFFSET(H5A_info_t, data_size), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5AC_cache_config_t{ int version; hbool_t rpt_fcn_enabled; hbool_t open_trace_file; hbool_t close_trace_file; char trace_file_name[H5AC__MAX_TRACE_FILE_NAME_LEN + 1]; hbool_t evictions_enabled; hbool_t set_initial_size; size_t initial_size; double min_clean_fraction; size_t max_size; size_t min_size; long int epoch_length; enum H5C_cache_incr_mode incr_mode; double lower_hr_threshold; double increment; hbool_t apply_max_increment; size_t max_increment; enum H5C_cache_flash_incr_mode flash_incr_mode; double flash_multiple; double flash_threshold; enum H5C_cache_decr_mode decr_mode; double upper_hr_threshold; double decrement; hbool_t apply_max_decrement; size_t max_decrement; int epochs_before_eviction; hbool_t apply_empty_reserve; double empty_reserve; size_t dirty_bytes_threshold; int metadata_write_strategy} H5AC_cache_config_t; */
+hid_t create_DT_H5AC_cache_config_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5AC_cache_config_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5AC_cache_config_t, version), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "rpt_fcn_enabled", HOFFSET(H5AC_cache_config_t, rpt_fcn_enabled), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "open_trace_file", HOFFSET(H5AC_cache_config_t, open_trace_file), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "close_trace_file", HOFFSET(H5AC_cache_config_t, close_trace_file), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "trace_file_name", HOFFSET(H5AC_cache_config_t, trace_file_name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "evictions_enabled", HOFFSET(H5AC_cache_config_t, evictions_enabled), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "set_initial_size", HOFFSET(H5AC_cache_config_t, set_initial_size), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "initial_size", HOFFSET(H5AC_cache_config_t, initial_size), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "min_clean_fraction", HOFFSET(H5AC_cache_config_t, min_clean_fraction), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "max_size", HOFFSET(H5AC_cache_config_t, max_size), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "min_size", HOFFSET(H5AC_cache_config_t, min_size), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "epoch_length", HOFFSET(H5AC_cache_config_t, epoch_length), h5_datatype[DT_long_int]);
+  H5Tinsert(dtype_id, "incr_mode", HOFFSET(H5AC_cache_config_t, incr_mode), h5_datatype[DT_H5C_cache_incr_mode]);
+  H5Tinsert(dtype_id, "lower_hr_threshold", HOFFSET(H5AC_cache_config_t, lower_hr_threshold), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "increment", HOFFSET(H5AC_cache_config_t, increment), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "apply_max_increment", HOFFSET(H5AC_cache_config_t, apply_max_increment), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "max_increment", HOFFSET(H5AC_cache_config_t, max_increment), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "flash_incr_mode", HOFFSET(H5AC_cache_config_t, flash_incr_mode), h5_datatype[DT_H5C_cache_flash_incr_mode]);
+  H5Tinsert(dtype_id, "flash_multiple", HOFFSET(H5AC_cache_config_t, flash_multiple), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "flash_threshold", HOFFSET(H5AC_cache_config_t, flash_threshold), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "decr_mode", HOFFSET(H5AC_cache_config_t, decr_mode), h5_datatype[DT_H5C_cache_decr_mode]);
+  H5Tinsert(dtype_id, "upper_hr_threshold", HOFFSET(H5AC_cache_config_t, upper_hr_threshold), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "decrement", HOFFSET(H5AC_cache_config_t, decrement), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "apply_max_decrement", HOFFSET(H5AC_cache_config_t, apply_max_decrement), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "max_decrement", HOFFSET(H5AC_cache_config_t, max_decrement), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "epochs_before_eviction", HOFFSET(H5AC_cache_config_t, epochs_before_eviction), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "apply_empty_reserve", HOFFSET(H5AC_cache_config_t, apply_empty_reserve), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "empty_reserve", HOFFSET(H5AC_cache_config_t, empty_reserve), h5_datatype[DT_double]);
+  H5Tinsert(dtype_id, "dirty_bytes_threshold", HOFFSET(H5AC_cache_config_t, dirty_bytes_threshold), h5_datatype[DT_size_t]);
+  H5Tinsert(dtype_id, "metadata_write_strategy", HOFFSET(H5AC_cache_config_t, metadata_write_strategy), h5_datatype[DT_int]);
+  return(dtype_id);
+}
+
+/* typedef struct H5AC_cache_image_config_t { int version; hbool_t generate_image; hbool_t save_resize_status; int entry_ageout} H5AC_cache_image_config_t; */
+hid_t create_DT_H5AC_cache_image_config_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5AC_cache_image_config_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5AC_cache_image_config_t, version), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "generate_image", HOFFSET(H5AC_cache_image_config_t, generate_image), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "save_resize_status", HOFFSET(H5AC_cache_image_config_t, save_resize_status), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "entry_ageout", HOFFSET(H5AC_cache_image_config_t, entry_ageout), h5_datatype[DT_int]);
+  return(dtype_id);
+}
+
+/* typedef struct H5D_info_t { int rank; char* dims; char* maxdims; H5T_class_t type_class; H5S_class_t space_class} H5D_info_t; */
+hid_t create_DT_H5D_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5D_info_t));
+  H5Tinsert(dtype_id, "rank", HOFFSET(H5D_info_t, rank), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "dims", HOFFSET(H5D_info_t, dims), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "maxdims", HOFFSET(H5D_info_t, maxdims), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "type_class", HOFFSET(H5D_info_t, type_class), h5_datatype[DT_H5T_class_t]);
+  H5Tinsert(dtype_id, "space_class", HOFFSET(H5D_info_t, space_class), h5_datatype[DT_H5S_class_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5E_error1_t { H5E_major_t maj_num; H5E_minor_t min_num; const char *func_name; const char *file_name; unsigned line; const char *desc} H5E_error1_t; */
+hid_t create_DT_H5E_error1_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5E_error1_t));
+  H5Tinsert(dtype_id, "maj_num", HOFFSET(H5E_error1_t, maj_num), h5_datatype[DT_H5E_major_t]);
+  H5Tinsert(dtype_id, "min_num", HOFFSET(H5E_error1_t, min_num), h5_datatype[DT_H5E_minor_t]);
+  H5Tinsert(dtype_id, "func_name", HOFFSET(H5E_error1_t, func_name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "file_name", HOFFSET(H5E_error1_t, file_name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "line", HOFFSET(H5E_error1_t, line), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "desc", HOFFSET(H5E_error1_t, desc), h5_datatype[DT_char]);
+  return(dtype_id);
+}
+
+/* typedef struct H5E_error2_t { hid_t cls_id; hid_t maj_num; hid_t min_num; unsigned line; const char *func_name; const char *file_name; const char *desc} H5E_error2_t; */
+hid_t create_DT_H5E_error2_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5E_error2_t));
+  H5Tinsert(dtype_id, "cls_id", HOFFSET(H5E_error2_t, cls_id), h5_datatype[DT_hid_t]);
+  H5Tinsert(dtype_id, "maj_num", HOFFSET(H5E_error2_t, maj_num), h5_datatype[DT_hid_t]);
+  H5Tinsert(dtype_id, "min_num", HOFFSET(H5E_error2_t, min_num), h5_datatype[DT_hid_t]);
+  H5Tinsert(dtype_id, "line", HOFFSET(H5E_error2_t, line), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "func_name", HOFFSET(H5E_error2_t, func_name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "file_name", HOFFSET(H5E_error2_t, file_name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "desc", HOFFSET(H5E_error2_t, desc), h5_datatype[DT_char]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info1_helper_t { hsize_t hdr_size; H5_ih_info_t msgs_info} H5F_info1_helper_t; */
+hid_t create_DT_H5F_info1_helper_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info1_helper_t));
+  H5Tinsert(dtype_id, "hdr_size", HOFFSET(H5F_info1_helper_t, hdr_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "msgs_info", HOFFSET(H5F_info1_helper_t, msgs_info), h5_datatype[DT_H5_ih_info_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info1_t { hsize_t super_ext_size; H5F_info1_helper_t sohm} H5F_info1_t; */
+hid_t create_DT_H5F_info1_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info1_t));
+  H5Tinsert(dtype_id, "super_ext_size", HOFFSET(H5F_info1_t, super_ext_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "sohm", HOFFSET(H5F_info1_t, sohm), h5_datatype[DT_H5F_info1_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info2_free_t { unsigned version; hsize_t meta_size; hsize_t tot_space} H5F_info2_free_t; */
+hid_t create_DT_H5F_info2_free_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info2_free_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5F_info2_free_t, version), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "meta_size", HOFFSET(H5F_info2_free_t, meta_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "tot_space", HOFFSET(H5F_info2_free_t, tot_space), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info2_sohm_t { unsigned version; hsize_t hdr_size; H5_ih_info_t msgs_info} H5F_info2_sohm_t; */
+hid_t create_DT_H5F_info2_sohm_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info2_sohm_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5F_info2_sohm_t, version), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "hdr_size", HOFFSET(H5F_info2_sohm_t, hdr_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "msgs_info", HOFFSET(H5F_info2_sohm_t, msgs_info), h5_datatype[DT_H5_ih_info_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info2_super_t { unsigned version; hsize_t super_size; hsize_t super_ext_size} H5F_info2_super_t; */
+hid_t create_DT_H5F_info2_super_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info2_super_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5F_info2_super_t, version), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "super_size", HOFFSET(H5F_info2_super_t, super_size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "super_ext_size", HOFFSET(H5F_info2_super_t, super_ext_size), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_info2_t { H5F_info2_super_t super; H5F_info2_free_t free; H5F_info2_sohm_t sohm} H5F_info2_t; */
+hid_t create_DT_H5F_info2_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_info2_t));
+  H5Tinsert(dtype_id, "super", HOFFSET(H5F_info2_t, super), h5_datatype[DT_H5F_info2_super_t]);
+  H5Tinsert(dtype_id, "free", HOFFSET(H5F_info2_t, free), h5_datatype[DT_H5F_info2_free_t]);
+  H5Tinsert(dtype_id, "sohm", HOFFSET(H5F_info2_t, sohm), h5_datatype[DT_H5F_info2_sohm_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_retry_info_t { unsigned nbins; uint32_t *retries[H5F_NUM_METADATA_READ_RETRY_TYPES]} H5F_retry_info_t; */
+hid_t create_DT_H5F_retry_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_retry_info_t));
+  H5Tinsert(dtype_id, "nbins", HOFFSET(H5F_retry_info_t, nbins), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "retries", HOFFSET(H5F_retry_info_t, retries), h5_datatype[DT_uint32_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5F_sect_info_t { haddr_t addr; hsize_t size} H5F_sect_info_t; */
+hid_t create_DT_H5F_sect_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5F_sect_info_t));
+  H5Tinsert(dtype_id, "addr", HOFFSET(H5F_sect_info_t, addr), h5_datatype[DT_haddr_t]);
+  H5Tinsert(dtype_id, "size", HOFFSET(H5F_sect_info_t, size), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5G_info_t { H5G_storage_type_t storage_type; hsize_t nlinks; int64_t max_corder; hbool_t mounted} H5G_info_t; */
+hid_t create_DT_H5G_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5G_info_t));
+  H5Tinsert(dtype_id, "storage_type", HOFFSET(H5G_info_t, storage_type), h5_datatype[DT_H5G_storage_type_t]);
+  H5Tinsert(dtype_id, "nlinks", HOFFSET(H5G_info_t, nlinks), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "max_corder", HOFFSET(H5G_info_t, max_corder), h5_datatype[DT_int64_t]);
+  H5Tinsert(dtype_id, "mounted", HOFFSET(H5G_info_t, mounted), h5_datatype[DT_hbool_t]);
+  return(dtype_id);
+}
+
+/* typedef union H5L_info1_helper_t { haddr_t address; size_t val_size} H5L_info1_helper_t; */
+hid_t create_DT_H5L_info1_helper_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5L_info1_helper_t));
+  H5Tinsert(dtype_id, "address", HOFFSET(H5L_info1_helper_t, address), h5_datatype[DT_haddr_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5L_info1_t { H5L_type_t type; hbool_t corder_valid; int64_t corder; H5T_cset_t cset; H5L_info1_helper_t u} H5L_info1_t; */
+hid_t create_DT_H5L_info1_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5L_info1_t));
+  H5Tinsert(dtype_id, "type", HOFFSET(H5L_info1_t, type), h5_datatype[DT_H5L_type_t]);
+  H5Tinsert(dtype_id, "corder_valid", HOFFSET(H5L_info1_t, corder_valid), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "corder", HOFFSET(H5L_info1_t, corder), h5_datatype[DT_int64_t]);
+  H5Tinsert(dtype_id, "cset", HOFFSET(H5L_info1_t, cset), h5_datatype[DT_H5T_cset_t]);
+  H5Tinsert(dtype_id, "u", HOFFSET(H5L_info1_t, u), h5_datatype[DT_H5L_info1_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef union H5L_info2_helper_t { H5O_token_t token; size_t val_size} H5L_info2_helper_t; */
+hid_t create_DT_H5L_info2_helper_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5L_info2_helper_t));
+  H5Tinsert(dtype_id, "token", HOFFSET(H5L_info2_helper_t, token), h5_datatype[DT_H5O_token_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5L_info2_t { H5L_type_t type; hbool_t corder_valid; int64_t corder; H5T_cset_t cset; H5L_info2_helper_t u} H5L_info2_t; */
+hid_t create_DT_H5L_info2_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5L_info2_t));
+  H5Tinsert(dtype_id, "type", HOFFSET(H5L_info2_t, type), h5_datatype[DT_H5L_type_t]);
+  H5Tinsert(dtype_id, "corder_valid", HOFFSET(H5L_info2_t, corder_valid), h5_datatype[DT_hbool_t]);
+  H5Tinsert(dtype_id, "corder", HOFFSET(H5L_info2_t, corder), h5_datatype[DT_int64_t]);
+  H5Tinsert(dtype_id, "cset", HOFFSET(H5L_info2_t, cset), h5_datatype[DT_H5T_cset_t]);
+  H5Tinsert(dtype_id, "u", HOFFSET(H5L_info2_t, u), h5_datatype[DT_H5L_info2_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5ls_info_t { char* name; int link_success; H5L_info1_t link; int obj_type_success; H5I_type_t obj_type; int num_attrs; int group_success; H5G_info_t group; int dataset_success; H5D_info_t dataset; int type_success; H5T_class_t committed_type} H5ls_info_t; */
+hid_t create_DT_H5ls_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5ls_info_t));
+  H5Tinsert(dtype_id, "name", HOFFSET(H5ls_info_t, name), h5_datatype[DT_char]);
+  H5Tinsert(dtype_id, "link_success", HOFFSET(H5ls_info_t, link_success), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "link", HOFFSET(H5ls_info_t, link), h5_datatype[DT_H5L_info1_t]);
+  H5Tinsert(dtype_id, "obj_type_success", HOFFSET(H5ls_info_t, obj_type_success), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "obj_type", HOFFSET(H5ls_info_t, obj_type), h5_datatype[DT_H5I_type_t]);
+  H5Tinsert(dtype_id, "num_attrs", HOFFSET(H5ls_info_t, num_attrs), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "group_success", HOFFSET(H5ls_info_t, group_success), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "group", HOFFSET(H5ls_info_t, group), h5_datatype[DT_H5G_info_t]);
+  H5Tinsert(dtype_id, "dataset_success", HOFFSET(H5ls_info_t, dataset_success), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "dataset", HOFFSET(H5ls_info_t, dataset), h5_datatype[DT_H5D_info_t]);
+  H5Tinsert(dtype_id, "type_success", HOFFSET(H5ls_info_t, type_success), h5_datatype[DT_int]);
+  H5Tinsert(dtype_id, "committed_type", HOFFSET(H5ls_info_t, committed_type), h5_datatype[DT_H5T_class_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_hdr_info_helper_msg_t { uint64_t present; uint64_t shared} H5O_hdr_info_helper_msg_t; */
+hid_t create_DT_H5O_hdr_info_helper_msg_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_hdr_info_helper_msg_t));
+  H5Tinsert(dtype_id, "present", HOFFSET(H5O_hdr_info_helper_msg_t, present), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "shared", HOFFSET(H5O_hdr_info_helper_msg_t, shared), h5_datatype[DT_uint64_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_hdr_info_helper_space_t { hsize_t total; hsize_t meta; hsize_t mesg; hsize_t free} H5O_hdr_info_helper_space_t; */
+hid_t create_DT_H5O_hdr_info_helper_space_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_hdr_info_helper_space_t));
+  H5Tinsert(dtype_id, "total", HOFFSET(H5O_hdr_info_helper_space_t, total), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "meta", HOFFSET(H5O_hdr_info_helper_space_t, meta), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "mesg", HOFFSET(H5O_hdr_info_helper_space_t, mesg), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "free", HOFFSET(H5O_hdr_info_helper_space_t, free), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_hdr_info_t { unsigned version; unsigned nmesgs; unsigned nchunks; unsigned flags; H5O_hdr_info_helper_space_t space; H5O_hdr_info_helper_msg_t mesg} H5O_hdr_info_t; */
+hid_t create_DT_H5O_hdr_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_hdr_info_t));
+  H5Tinsert(dtype_id, "version", HOFFSET(H5O_hdr_info_t, version), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "nmesgs", HOFFSET(H5O_hdr_info_t, nmesgs), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "nchunks", HOFFSET(H5O_hdr_info_t, nchunks), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "flags", HOFFSET(H5O_hdr_info_t, flags), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "space", HOFFSET(H5O_hdr_info_t, space), h5_datatype[DT_H5O_hdr_info_helper_space_t]);
+  H5Tinsert(dtype_id, "mesg", HOFFSET(H5O_hdr_info_t, mesg), h5_datatype[DT_H5O_hdr_info_helper_msg_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_info_helper_t { H5_ih_info_t obj; H5_ih_info_t attr} H5O_info_helper_t; */
+hid_t create_DT_H5O_info_helper_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_info_helper_t));
+  H5Tinsert(dtype_id, "obj", HOFFSET(H5O_info_helper_t, obj), h5_datatype[DT_H5_ih_info_t]);
+  H5Tinsert(dtype_id, "attr", HOFFSET(H5O_info_helper_t, attr), h5_datatype[DT_H5_ih_info_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_info1_t { unsigned long fileno; haddr_t addr; H5O_type_t type; unsigned rc; time_t atime; time_t mtime; time_t ctime; time_t btime; hsize_t num_attrs; H5O_hdr_info_t hdr; H5O_info_helper_t meta_size} H5O_info1_t; */
+hid_t create_DT_H5O_info1_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_info1_t));
+  H5Tinsert(dtype_id, "fileno", HOFFSET(H5O_info1_t, fileno), h5_datatype[DT_unsigned_long]);
+  H5Tinsert(dtype_id, "addr", HOFFSET(H5O_info1_t, addr), h5_datatype[DT_haddr_t]);
+  H5Tinsert(dtype_id, "type", HOFFSET(H5O_info1_t, type), h5_datatype[DT_H5O_type_t]);
+  H5Tinsert(dtype_id, "rc", HOFFSET(H5O_info1_t, rc), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "atime", HOFFSET(H5O_info1_t, atime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "mtime", HOFFSET(H5O_info1_t, mtime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "ctime", HOFFSET(H5O_info1_t, ctime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "btime", HOFFSET(H5O_info1_t, btime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "num_attrs", HOFFSET(H5O_info1_t, num_attrs), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "hdr", HOFFSET(H5O_info1_t, hdr), h5_datatype[DT_H5O_hdr_info_t]);
+  H5Tinsert(dtype_id, "meta_size", HOFFSET(H5O_info1_t, meta_size), h5_datatype[DT_H5O_info_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_info2_t { unsigned long fileno; H5O_token_t token; H5O_type_t type; unsigned rc; time_t atime; time_t mtime; time_t ctime; time_t btime; hsize_t num_attrs} H5O_info2_t; */
+hid_t create_DT_H5O_info2_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_info2_t));
+  H5Tinsert(dtype_id, "fileno", HOFFSET(H5O_info2_t, fileno), h5_datatype[DT_unsigned_long]);
+  H5Tinsert(dtype_id, "token", HOFFSET(H5O_info2_t, token), h5_datatype[DT_H5O_token_t]);
+  H5Tinsert(dtype_id, "type", HOFFSET(H5O_info2_t, type), h5_datatype[DT_H5O_type_t]);
+  H5Tinsert(dtype_id, "rc", HOFFSET(H5O_info2_t, rc), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "atime", HOFFSET(H5O_info2_t, atime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "mtime", HOFFSET(H5O_info2_t, mtime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "ctime", HOFFSET(H5O_info2_t, ctime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "btime", HOFFSET(H5O_info2_t, btime), h5_datatype[DT_time_t]);
+  H5Tinsert(dtype_id, "num_attrs", HOFFSET(H5O_info2_t, num_attrs), h5_datatype[DT_hsize_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_native_info_t { H5O_hdr_info_t hdr; H5O_info_helper_t meta_size} H5O_native_info_t; */
+hid_t create_DT_H5O_native_info_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_native_info_t));
+  H5Tinsert(dtype_id, "hdr", HOFFSET(H5O_native_info_t, hdr), h5_datatype[DT_H5O_hdr_info_t]);
+  H5Tinsert(dtype_id, "meta_size", HOFFSET(H5O_native_info_t, meta_size), h5_datatype[DT_H5O_info_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_stat_t { hsize_t size; hsize_t free; unsigned nmesgs; unsigned nchunks} H5O_stat_t; */
+hid_t create_DT_H5O_stat_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_stat_t));
+  H5Tinsert(dtype_id, "size", HOFFSET(H5O_stat_t, size), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "free", HOFFSET(H5O_stat_t, free), h5_datatype[DT_hsize_t]);
+  H5Tinsert(dtype_id, "nmesgs", HOFFSET(H5O_stat_t, nmesgs), h5_datatype[DT_unsigned]);
+  H5Tinsert(dtype_id, "nchunks", HOFFSET(H5O_stat_t, nchunks), h5_datatype[DT_unsigned]);
+  return(dtype_id);
+}
+
+/* typedef struct H5O_token_t { uint8_t __data[H5O_MAX_TOKEN_SIZE]} H5O_token_t; */
+hid_t create_DT_H5O_token_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5O_token_t));
+  H5Tinsert(dtype_id, "__data", HOFFSET(H5O_token_t, __data), h5_datatype[DT_uint8_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5R_ref_helper_t { uint64_t part0; uint64_t part1; uint64_t part2; uint64_t part3; uint64_t part4; uint64_t part5; uint64_t part6; uint64_t part7} H5R_ref_helper_t; */
+hid_t create_DT_H5R_ref_helper_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5R_ref_helper_t));
+  H5Tinsert(dtype_id, "part0", HOFFSET(H5R_ref_helper_t, part0), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part1", HOFFSET(H5R_ref_helper_t, part1), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part2", HOFFSET(H5R_ref_helper_t, part2), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part3", HOFFSET(H5R_ref_helper_t, part3), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part4", HOFFSET(H5R_ref_helper_t, part4), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part5", HOFFSET(H5R_ref_helper_t, part5), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part6", HOFFSET(H5R_ref_helper_t, part6), h5_datatype[DT_uint64_t]);
+  H5Tinsert(dtype_id, "part7", HOFFSET(H5R_ref_helper_t, part7), h5_datatype[DT_uint64_t]);
+  return(dtype_id);
+}
+
+/* typedef struct H5R_ref_t { H5R_ref_helper_t u} H5R_ref_t; */
+hid_t create_DT_H5R_ref_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(H5R_ref_t));
+  H5Tinsert(dtype_id, "u", HOFFSET(H5R_ref_t, u), h5_datatype[DT_H5R_ref_helper_t]);
+  return(dtype_id);
+}
+
+/* typedef struct { uint8_t __data[H5R_DSET_REG_REF_BUF_SIZE]} hdset_reg_ref_t; */
+hid_t create_DT_hdset_reg_ref_t(void) {
+  hid_t dtype_id = H5Tcreate(H5T_COMPOUND, sizeof(hdset_reg_ref_t));
+  H5Tinsert(dtype_id, "__data", HOFFSET(hdset_reg_ref_t, __data), h5_datatype[DT_uint8_t]);
+  return(dtype_id);
+}

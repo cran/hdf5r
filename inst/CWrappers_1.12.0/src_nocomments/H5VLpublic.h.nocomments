@@ -1,0 +1,86 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef _H5VLpublic_H
+#define _H5VLpublic_H
+
+
+#include "H5public.h"           
+#include "H5Ipublic.h"          
+
+
+
+
+
+
+
+
+
+#define H5_VOL_INVALID  (-1)    
+#define H5_VOL_NATIVE   0       
+#define H5_VOL_RESERVED 256     
+#define H5_VOL_MAX      65535   
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef int H5VL_class_value_t;
+
+
+
+
+
+
+
+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+H5_DLL hid_t H5VLregister_connector_by_name(const char *connector_name, hid_t vipl_id);
+H5_DLL hid_t H5VLregister_connector_by_value(H5VL_class_value_t connector_value, hid_t vipl_id);
+H5_DLL htri_t H5VLis_connector_registered_by_name(const char *name);
+H5_DLL htri_t H5VLis_connector_registered_by_value(H5VL_class_value_t connector_value);
+H5_DLL hid_t H5VLget_connector_id(hid_t obj_id);
+H5_DLL hid_t H5VLget_connector_id_by_name(const char *name);
+H5_DLL hid_t H5VLget_connector_id_by_value(H5VL_class_value_t connector_value);
+H5_DLL ssize_t H5VLget_connector_name(hid_t id, char *name, size_t size);
+H5_DLL herr_t H5VLclose(hid_t connector_id);
+H5_DLL herr_t H5VLunregister_connector(hid_t connector_id);
+
+
+#ifdef __cplusplus
+}
+#endif
+
+
+#include "H5VLconnector.h"              
+#include "H5VLconnector_passthru.h"     
+#include "H5VLnative.h"                 
+
+#endif 
+

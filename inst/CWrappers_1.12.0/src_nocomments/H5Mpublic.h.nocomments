@@ -1,0 +1,127 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef _H5Mpublic_H
+#define _H5Mpublic_H
+
+
+
+
+#include "H5public.h"
+#include "H5Ipublic.h"
+
+
+
+
+
+
+
+
+#define H5VL_MAP_CREATE         1
+#define H5VL_MAP_OPEN           2
+#define H5VL_MAP_GET_VAL        3
+#define H5VL_MAP_EXISTS         4
+#define H5VL_MAP_PUT            5
+#define H5VL_MAP_GET            6
+#define H5VL_MAP_SPECIFIC       7
+#define H5VL_MAP_OPTIONAL       8
+#define H5VL_MAP_CLOSE          9
+
+
+
+
+
+
+
+typedef enum H5VL_map_get_t {
+    H5VL_MAP_GET_MAPL,                      
+    H5VL_MAP_GET_MCPL,                      
+    H5VL_MAP_GET_KEY_TYPE,                  
+    H5VL_MAP_GET_VAL_TYPE,                  
+    H5VL_MAP_GET_COUNT                      
+} H5VL_map_get_t;
+
+
+typedef enum H5VL_map_specific_t {
+    H5VL_MAP_ITER,                          
+    H5VL_MAP_DELETE                         
+} H5VL_map_specific_t;
+
+
+typedef herr_t (*H5M_iterate_t)(hid_t map_id, const void *key, void *op_data);
+
+
+
+
+
+
+
+
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+
+
+
+#ifdef H5_HAVE_MAP_API
+
+H5_DLL hid_t H5Mcreate(hid_t loc_id, const char *name, hid_t key_type_id,
+    hid_t val_type_id, hid_t lcpl_id, hid_t mcpl_id, hid_t mapl_id);
+H5_DLL hid_t H5Mcreate_anon(hid_t loc_id, hid_t key_type_id, hid_t val_type_id,
+    hid_t mcpl_id, hid_t mapl_id);
+H5_DLL hid_t H5Mopen(hid_t loc_id, const char *name, hid_t mapl_id);
+H5_DLL herr_t H5Mclose(hid_t map_id);
+H5_DLL hid_t H5Mget_key_type(hid_t map_id);
+H5_DLL hid_t H5Mget_val_type(hid_t map_id);
+H5_DLL hid_t H5Mget_create_plist(hid_t map_id);
+H5_DLL hid_t H5Mget_access_plist(hid_t map_id);
+H5_DLL herr_t H5Mget_count(hid_t map_id, hsize_t *count, hid_t dxpl_id);
+H5_DLL herr_t H5Mput(hid_t map_id, hid_t key_mem_type_id, const void *key,
+    hid_t val_mem_type_id, const void *value, hid_t dxpl_id);
+H5_DLL herr_t H5Mget(hid_t map_id, hid_t key_mem_type_id, const void *key,
+    hid_t val_mem_type_id, void *value, hid_t dxpl_id);
+H5_DLL herr_t H5Mexists(hid_t map_id, hid_t key_mem_type_id, const void *key,
+    hbool_t *exists, hid_t dxpl_id);
+H5_DLL herr_t H5Miterate(hid_t map_id, hsize_t *idx, hid_t key_mem_type_id,
+    H5M_iterate_t op, void *op_data, hid_t dxpl_id);
+H5_DLL herr_t H5Miterate_by_name(hid_t loc_id, const char *map_name,
+    hsize_t *idx, hid_t key_mem_type_id, H5M_iterate_t op, void *op_data,
+    hid_t dxpl_id, hid_t lapl_id);
+H5_DLL herr_t H5Mdelete(hid_t map_id, hid_t key_mem_type_id,
+    const void *key, hid_t dxpl_id);
+
+
+
+
+
+#ifndef H5_NO_DEPRECATED_SYMBOLS
+#endif 
+
+#endif 
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+

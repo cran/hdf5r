@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef _H5PLpublic_H
+#define _H5PLpublic_H
+
+
+#include "H5public.h"          
+
+
+
+
+
+
+
+#define H5PL_NO_PLUGIN          "::"
+
+
+typedef enum H5PL_type_t {
+    H5PL_TYPE_ERROR         = -1,   
+    H5PL_TYPE_FILTER        =  0,   
+    H5PL_TYPE_VOL           =  1,   
+    H5PL_TYPE_NONE          =  2    
+} H5PL_type_t;
+
+
+#define H5PL_FILTER_PLUGIN      0x0001
+#define H5PL_VOL_PLUGIN         0x0002
+#define H5PL_ALL_PLUGIN         0xFFFF
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+H5_DLL herr_t H5PLset_loading_state(unsigned int plugin_control_mask);
+H5_DLL herr_t H5PLget_loading_state(unsigned int *plugin_control_mask );
+H5_DLL herr_t H5PLappend(const char *search_path);
+H5_DLL herr_t H5PLprepend(const char *search_path);
+H5_DLL herr_t H5PLreplace(const char *search_path, unsigned int index);
+H5_DLL herr_t H5PLinsert(const char *search_path, unsigned int index);
+H5_DLL herr_t H5PLremove(unsigned int index);
+H5_DLL ssize_t H5PLget(unsigned int index, char *path_buf , size_t buf_size);
+H5_DLL herr_t H5PLsize(unsigned int *num_paths );
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif 
+

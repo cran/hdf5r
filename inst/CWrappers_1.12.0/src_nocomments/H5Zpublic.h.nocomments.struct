@@ -1,0 +1,6 @@
+typedef enum H5Z_SO_scale_type_t { H5Z_SO_FLOAT_DSCALE = 0, H5Z_SO_FLOAT_ESCALE = 1, H5Z_SO_INT = 2} H5Z_SO_scale_type_t;
+typedef enum H5Z_EDC_t { H5Z_ERROR_EDC = -1, H5Z_DISABLE_EDC = 0, H5Z_ENABLE_EDC = 1, H5Z_NO_EDC = 2 } H5Z_EDC_t;
+typedef enum H5Z_cb_return_t { H5Z_CB_ERROR = -1, H5Z_CB_FAIL = 0, H5Z_CB_CONT = 1, H5Z_CB_NO = 2} H5Z_cb_return_t;
+typedef struct H5Z_cb_t { H5Z_filter_func_t func; void *op_data} H5Z_cb_t;
+typedef struct H5Z_class2_t { int version; H5Z_filter_t id; unsigned encoder_present; unsigned decoder_present; const char *name; H5Z_can_apply_func_t can_apply; H5Z_set_local_func_t set_local; H5Z_func_t filter} H5Z_class2_t;
+typedef struct H5Z_class1_t { H5Z_filter_t id; const char *name; H5Z_can_apply_func_t can_apply; H5Z_set_local_func_t set_local; H5Z_func_t filter} H5Z_class1_t;
