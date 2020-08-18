@@ -9,8 +9,6 @@
 
 # Note
 
-**Please note that the newest version of hdf5 1.12.0 is currently not supported. Use version 1.10.x until a fix is released**
-
 **hdf5r** is an R interface to the [HDF5](https://www.hdfgroup.org/HDF5/) library. It is implemented using [R6](https://CRAN.R-project.org/package=R6) classes based on the [HDF5-C-API](https://support.hdfgroup.org/HDF5/doc/RM/RM_H5Front.html). The package supports all data-types as specified by HDF5 (including references) and provides many convenience functions yet also an extensive selection of the native HDF5-C-API functions. **hdf5r** is available on [Github](https://github.com/hhoeflin/hdf5r) and has already been released on [CRAN](https://CRAN.R-project.org/package=hdf5r) for all major platforms (Windows, OS X, Linux). It is also 
 tested using several hundred assertions.
 

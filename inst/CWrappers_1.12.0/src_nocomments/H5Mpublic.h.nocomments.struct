@@ -1,2 +1,0 @@
-typedef enum H5VL_map_get_t { H5VL_MAP_GET_MAPL, H5VL_MAP_GET_MCPL, H5VL_MAP_GET_KEY_TYPE, H5VL_MAP_GET_VAL_TYPE, H5VL_MAP_GET_COUNT } H5VL_map_get_t;
-typedef enum H5VL_map_specific_t { H5VL_MAP_ITER, H5VL_MAP_DELETE } H5VL_map_specific_t;

@@ -1,4 +1,0 @@
-typedef enum H5G_storage_type_t { H5G_STORAGE_TYPE_UNKNOWN = -1, H5G_STORAGE_TYPE_SYMBOL_TABLE, H5G_STORAGE_TYPE_COMPACT, H5G_STORAGE_TYPE_DENSE } H5G_storage_type_t;
-typedef struct H5G_info_t { H5G_storage_type_t storage_type; hsize_t nlinks; int64_t max_corder; hbool_t mounted} H5G_info_t;
-typedef enum H5G_obj_t { H5G_UNKNOWN = -1, H5G_GROUP, H5G_DATASET, H5G_TYPE, H5G_LINK, H5G_UDLINK, H5G_RESERVED_5, H5G_RESERVED_6, H5G_RESERVED_7 } H5G_obj_t;
-typedef struct H5G_stat_t { unsigned long fileno[2]; unsigned long objno[2]; unsigned nlink; H5G_obj_t type; time_t mtime; size_t linklen; H5O_stat_t ohdr} H5G_stat_t;
