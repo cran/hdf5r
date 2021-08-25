@@ -1,7 +1,7 @@
-b4c0f1aab85c6f62c0ae7480e3388ce7 *DESCRIPTION
+ec5dc6b4e4398bb9617f3b910258de77 *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-8f5c914d8eae73fd1f3a2f85c064edb0 *NEWS.md
+64b70eff934551d1ae6816684edfed97 *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 60f4caf55b0035b2d7bacf5dfdcb04ca *R/H5constants.R
@@ -26,11 +26,11 @@ d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
-17ece3acfc9a8008f376e049c66936cc *README.md
-8e605659720e821fe6c9a840d0389130 *build/vignette.rds
+490728deb31d11afb866b39a19027c8f *README.md
+3eeb459ab12833af2bef138c34ad9083 *build/vignette.rds
 c5fde9d9fc5094e4f216b0f98344a521 *cleanup
-fdfad00c2c3c32620daad4f72d3e8c04 *configure
-3629f4c4b489afb803e61e39125b5eca *configure.ac
+3b8bae3ca2793464cb0efab313e7bb84 *configure
+8b60db8f1b209010b86b384ad3f748d8 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 399f05f67bc5dd81898a5fa4af075a81 *inst/CWrappers_1.10.2/Apache_Copyright_Notice.txt
 058366acbd0c27c6ad67ec19704e72be *inst/CWrappers_1.10.2/FindAndReplace.R
@@ -225,7 +225,7 @@ ca16063c7948a315bde61bd7e391dcee *inst/CWrappers_1.12.0/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 6ea71a6d702271b95bd8643e204544d5 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-83a90484162f13857d4f33bb82ddeade *inst/doc/hdf5r.html
+2c2ac6d42c4cdd9e3498baed1db0fe55 *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
 594fb1644ac98c65adcbf7b7f8f577af *inst/m4/ax_lib_hdf5.m4
@@ -700,7 +700,7 @@ c6eeacf07cf1abf0d50ab4f1a73e7be7 *src/convert.h
 feb02e9070a50003fa1d9e2648c99c57 *src/global.h
 f7da9717f0c4ea7fa9ae4865d0a15366 *src/hdf5r_init.c
 557b6b663337f8dd9443d452f3a12131 *tests/testthat.R
-0537ead8a314a886c9f7619e6919d974 *tests/testthat/test-64bit_support.R
+e1350f3076bc5d39a0006a9901bde529 *tests/testthat/test-64bit_support.R
 110fe7c63144e7f0fd8796e8a1f430f3 *tests/testthat/test-convert.R
 4d8bbad3629af02ceac94121bfe100b6 *tests/testthat/test-factor_ext.R
 bd30e6770aba74706b6e47dde17fc43b *tests/testthat/test-h5I.R
