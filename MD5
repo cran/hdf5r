@@ -1,7 +1,7 @@
-ec5dc6b4e4398bb9617f3b910258de77 *DESCRIPTION
+d4654dd18b27e7a40d3fdae47e6bad86 *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-64b70eff934551d1ae6816684edfed97 *NEWS.md
+585e4f4730a3d9d0f09cc2357e1a21de *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 60f4caf55b0035b2d7bacf5dfdcb04ca *R/H5constants.R
@@ -26,11 +26,10 @@ d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
-490728deb31d11afb866b39a19027c8f *README.md
 3eeb459ab12833af2bef138c34ad9083 *build/vignette.rds
 c5fde9d9fc5094e4f216b0f98344a521 *cleanup
-3b8bae3ca2793464cb0efab313e7bb84 *configure
-8b60db8f1b209010b86b384ad3f748d8 *configure.ac
+d840bfe4fb0ef1a005cd20f668a6d233 *configure
+985c2dd73f834c259e5dc6d9f0d615a6 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 399f05f67bc5dd81898a5fa4af075a81 *inst/CWrappers_1.10.2/Apache_Copyright_Notice.txt
 058366acbd0c27c6ad67ec19704e72be *inst/CWrappers_1.10.2/FindAndReplace.R
@@ -225,10 +224,10 @@ ca16063c7948a315bde61bd7e391dcee *inst/CWrappers_1.12.0/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 6ea71a6d702271b95bd8643e204544d5 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-2c2ac6d42c4cdd9e3498baed1db0fe55 *inst/doc/hdf5r.html
+2da4498dd34235d859691c88c2a2451c *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
-594fb1644ac98c65adcbf7b7f8f577af *inst/m4/ax_lib_hdf5.m4
+a395a283701299f475fd7645ca51a273 *inst/m4/ax_lib_hdf5.m4
 9ad343f69edb5f940486d761c4ae25bc *inst/m4/hh_hdf5rlib.m4
 45a4aa5af9b3f472e4c0f82433b30336 *inst/test-ascii-length-bug.h5
 479706a4e6ae15d7554f02ab3174cedd *inst/test-ascii-length-bug.py
@@ -690,7 +689,8 @@ c37045497ac1bfbf600ba449d0755820 *src/H5Error.h
 c28c7c95aa24f6d0b157144594954c18 *src/H5ls.c
 6a1e74181b4cf40fee41de9efde50ff9 *src/H5ls.h
 41ff184aac3ad59c503eead1cb572739 *src/Makevars.in
-bc462f6ecbc05afc07391d35b4467925 *src/Makevars.win
+2cec33791efd347cbcb051402d7cf9c4 *src/Makevars.ucrt
+6a209de0f6a4b13086c42e8fe223ecf2 *src/Makevars.win
 fbcde8ed2c0dbbb514123ec08ca73fad *src/README
 9e6a11b7b92da37b309ed9a628ea3816 *src/Wrapper_manual_H5T.c
 466762b4074448a9de0f7af228ff565e *src/Wrapper_manual_H5T.h
