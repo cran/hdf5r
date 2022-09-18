@@ -1,7 +1,7 @@
-d4654dd18b27e7a40d3fdae47e6bad86 *DESCRIPTION
+2cd6d06a02e642b3d6f4512ec99b5813 *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-585e4f4730a3d9d0f09cc2357e1a21de *NEWS.md
+ddeb975ed05313cca1b3573efc559f75 *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 60f4caf55b0035b2d7bacf5dfdcb04ca *R/H5constants.R
@@ -18,7 +18,7 @@ f9f91d049b84cbf3def60126569f930c *R/R6Classes_H5S.R
 00ce55a597cfa3334267de21e5a35c81 *R/R6Classes_H5T.R
 0a95e58c3ccd7393e0582ec9ab3351fe *R/adapt_during_onLoad.R
 32aa5f24d7464ee6e992a7cc8ea96144 *R/convert.R
-f285596440daaa91d9a9002fdafce0c7 *R/factor_ext.R
+dc47660923e98ab39530b3926c219559 *R/factor_ext.R
 6e4eb820706e8de7071e5a132574a735 *R/globalVariables.R
 d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 9fec3cb96fb8ca2d15f716d04a08b3be *R/h5wrapper.R
@@ -26,7 +26,7 @@ d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
-3eeb459ab12833af2bef138c34ad9083 *build/vignette.rds
+d610b3572871667d9453d21b25b7a6d0 *build/vignette.rds
 c5fde9d9fc5094e4f216b0f98344a521 *cleanup
 d840bfe4fb0ef1a005cd20f668a6d233 *configure
 985c2dd73f834c259e5dc6d9f0d615a6 *configure.ac
@@ -224,7 +224,7 @@ ca16063c7948a315bde61bd7e391dcee *inst/CWrappers_1.12.0/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 6ea71a6d702271b95bd8643e204544d5 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-2da4498dd34235d859691c88c2a2451c *inst/doc/hdf5r.html
+f642615c37a7caa7c3494639158b3697 *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
 a395a283701299f475fd7645ca51a273 *inst/m4/ax_lib_hdf5.m4
