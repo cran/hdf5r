@@ -1,7 +1,7 @@
-2cd6d06a02e642b3d6f4512ec99b5813 *DESCRIPTION
+aa5a4eb240b25ec9066a177ef92d04cb *DESCRIPTION
 f5ade800de32701c4bc5ea583795f639 *LICENSE
 de01e49024ae6e1220dc451b31d5b75c *NAMESPACE
-ddeb975ed05313cca1b3573efc559f75 *NEWS.md
+391f0ad776d608b15087e105f4c89502 *NEWS.md
 33bf1338350992f732dae2cbc550898f *R/Common_functions.R
 b451c8d1d73f8ba4025b8b79d83beba4 *R/Compound.R
 60f4caf55b0035b2d7bacf5dfdcb04ca *R/H5constants.R
@@ -26,10 +26,10 @@ d41d8cd98f00b204e9800998ecf8427e *R/h5errorHandling.R
 a049f8205c99d6f07879974c1109ef07 *R/high_level_UI.R
 6f5495ddf950ff637d96b14c90794589 *R/open_objs.R
 cf0532c607644b4c949b8fce75bfe10a *R/zzz.R
-d610b3572871667d9453d21b25b7a6d0 *build/vignette.rds
+9281486e8d2bf3a33468f6c5943d1412 *build/vignette.rds
 c5fde9d9fc5094e4f216b0f98344a521 *cleanup
-d840bfe4fb0ef1a005cd20f668a6d233 *configure
-985c2dd73f834c259e5dc6d9f0d615a6 *configure.ac
+43a047c80521a7530835947eb0ae20f8 *configure
+1afd31b989f6793a4dc87aed3b0feb14 *configure.ac
 d41d8cd98f00b204e9800998ecf8427e *configure.win
 399f05f67bc5dd81898a5fa4af075a81 *inst/CWrappers_1.10.2/Apache_Copyright_Notice.txt
 058366acbd0c27c6ad67ec19704e72be *inst/CWrappers_1.10.2/FindAndReplace.R
@@ -224,7 +224,7 @@ ca16063c7948a315bde61bd7e391dcee *inst/CWrappers_1.12.0/identify_prototypes.R
 1fe675a1615def15caca141e32817a5a *inst/HDF5_COPYRIGHTS.txt
 6ea71a6d702271b95bd8643e204544d5 *inst/doc/hdf5r.R
 73dc7f5ac2f6e40e1a0b704a5d7e9b2e *inst/doc/hdf5r.Rmd
-f642615c37a7caa7c3494639158b3697 *inst/doc/hdf5r.html
+8051333ab827ae2228be4b7d054b4f28 *inst/doc/hdf5r.html
 28b6e2fc44b22419c138db5b465ac385 *inst/h5ex_t_enum.h5
 ebb455a7fd6a8ba9a4e38a25c8f0b686 *inst/m4/ax_compare_version.m4
 a395a283701299f475fd7645ca51a273 *inst/m4/ax_lib_hdf5.m4
@@ -688,7 +688,7 @@ c678cd624938668ae2982c3d4457d1bd *src/H5Error.c
 c37045497ac1bfbf600ba449d0755820 *src/H5Error.h
 c28c7c95aa24f6d0b157144594954c18 *src/H5ls.c
 6a1e74181b4cf40fee41de9efde50ff9 *src/H5ls.h
-41ff184aac3ad59c503eead1cb572739 *src/Makevars.in
+3a6eaf63ede7590e6291167bb4bf4d81 *src/Makevars.in
 2cec33791efd347cbcb051402d7cf9c4 *src/Makevars.ucrt
 6a209de0f6a4b13086c42e8fe223ecf2 *src/Makevars.win
 fbcde8ed2c0dbbb514123ec08ca73fad *src/README
@@ -699,6 +699,7 @@ c6eeacf07cf1abf0d50ab4f1a73e7be7 *src/convert.h
 644608e356b2e78fbb7be8c705ac1959 *src/export_manual.h
 feb02e9070a50003fa1d9e2648c99c57 *src/global.h
 f7da9717f0c4ea7fa9ae4865d0a15366 *src/hdf5r_init.c
+ae9e582708e4ae051dda112ea1f38edc *src/patch_1.10.6
 557b6b663337f8dd9443d452f3a12131 *tests/testthat.R
 e1350f3076bc5d39a0006a9901bde529 *tests/testthat/test-64bit_support.R
 110fe7c63144e7f0fd8796e8a1f430f3 *tests/testthat/test-convert.R
