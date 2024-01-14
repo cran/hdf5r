@@ -112,7 +112,7 @@ herr_t _errorCollector( hid_t estack_id, void * stream) {
   if(was_default) {
     H5Eclose_stack(estack_id);
   }
-  error(client_data.err_msg);
+  error("%s", client_data.err_msg);
 
   return 0;
 }

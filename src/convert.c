@@ -18,6 +18,7 @@
 
 
 #include "convert.h"
+#include <inttypes.h>
 
 /*********************************************************************************
  * Functions for converting an R object to HDF5
@@ -258,7 +259,7 @@ SEXP RToH5_INTEGER(SEXP _Robj, hid_t dtype_id, R_xlen_t nelem) {
   SEXP Rval;
 
   if(nelem != XLENGTH(_Robj)) {
-    error("Length of integer vector not as expected: Actual: %d; Expected %d\n", XLENGTH(_Robj), nelem);
+    error("Length of integer vector not as expected: Actual: %" PRId64 "; Expected %" PRId64 "\n", XLENGTH(_Robj), nelem);
   }
 
   switch(TYPEOF(_Robj)) {
@@ -2697,7 +2698,7 @@ herr_t H5Tconvert_with_warning(hid_t src_type_id, hid_t dest_type_id, size_t nel
   char* issue_string = R_alloc(1, 300);
   int issue_res = get_issue_string(conv_op_data, issue_string, 300);
   if(issue_res) {
-    warning(issue_string);
+    warning("%s", issue_string);
   }
   return(herr);
 }

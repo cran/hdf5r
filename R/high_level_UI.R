@@ -348,7 +348,7 @@ are_args_scalar <- function(args) {
 ##'
 ##' Checks for the functions \code{:}, \code{seq} and \code{seq_len}
 ##' @title Check argument for known functions that encode a hyperslab
-##' @param cur_arg The argument to check
+##' @param x The argument to check
 ##' @param envir The environment in which to evaluate the argument
 ##' @return A vector of length 4 describing start, count, stride and block if appropriate
 ##' @author Holger Hoefling
@@ -414,7 +414,7 @@ check_arg_for_hyperslab_func <- function(x, envir) {
 ##' @param post_read Should the reshuffle be computed for post-read (then \code{TRUE}) or pre-write (then \code{FALSE})
 ##' @return A list with 2 parts; Evaluated arguments, regularity report and reshuffle indicators. Will be returned as a list
 ##' with components \code{args_in}, \code{args_point}, \code{is_hyperslab}, \code{hyperslab},
-##' \code{needs_reshuffle}, code{reshuffle}, \code{result_dims_pre_shuffle}, \code{result_dims_post_shuffle}, \code{max_dims}
+##' \code{needs_reshuffle}, \code{reshuffle}, \code{result_dims_pre_shuffle}, \code{result_dims_post_shuffle}, \code{max_dims}
 ##' @author Holger Hoefling
 ##' @keywords internal
 args_regularity_evaluation <- function(args, ds_dims, envir, post_read=TRUE) {

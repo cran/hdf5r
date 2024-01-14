@@ -1,3 +1,6 @@
+# hdf5r 1.3.9
+- Fixed issues with string formatting
+
 # hdf5r 1.3.8
 - Fixed issue in configue.ac that lead to failing builds.
 

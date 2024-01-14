@@ -17,13 +17,13 @@
 #############################################################################
 
 
-##' Create an \\code{\\link{H5P}} out of an id
+##' Create an \code{\link{H5P}} out of an id
 ##'
 ##' Function that determines the property list type of an id and creates
 ##' the appropriate class for it.
-##' @title Create an \\code{\\link{H5P}} out of an id
+##' @title Create an \code{\link{H5P}} out of an id
 ##' @param id The id to wrap inside an object
-##' @return An object of class \\code{\\link{H5P}}
+##' @return An object of class \code{\link{H5P}}
 ##' @author Holger Hoefling
 ##' @keywords internal
 H5P_factory <- function(id) {

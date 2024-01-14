@@ -18,7 +18,7 @@ args_regularity_evaluation(args, ds_dims, envir, post_read = TRUE)
 \value{
 A list with 2 parts; Evaluated arguments, regularity report and reshuffle indicators. Will be returned as a list
 with components \code{args_in}, \code{args_point}, \code{is_hyperslab}, \code{hyperslab},
-\code{needs_reshuffle}, code{reshuffle}, \code{result_dims_pre_shuffle}, \code{result_dims_post_shuffle}, \code{max_dims}
+\code{needs_reshuffle}, \code{reshuffle}, \code{result_dims_pre_shuffle}, \code{result_dims_post_shuffle}, \code{max_dims}
 }
 \description{
 Evaluate if the arguments are regular for hyperslab use

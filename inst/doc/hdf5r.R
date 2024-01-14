@@ -1,4 +1,4 @@
-## ---- include=FALSE, eval=TRUE------------------------------------------------
+## ----include=FALSE, eval=TRUE-------------------------------------------------
 knitr::opts_chunk$set(fig.width=7, fig.height=7, tidy=TRUE, results="hold")
 
 ## -----------------------------------------------------------------------------
@@ -38,14 +38,14 @@ h5attr(flights.grp[["wind_dir"]], "rownames") <- rownames(weather_wind_dir)
 h5attr(flights.grp[["wind_speed"]], "colnames") <- colnames(weather_wind_speed)
 h5attr(flights.grp[["wind_speed"]], "rownames") <- rownames(weather_wind_speed)
 
-## ---- results="markup"--------------------------------------------------------
+## ----results="markup"---------------------------------------------------------
 names(file.h5)
 names(flights.grp)
 
 ## -----------------------------------------------------------------------------
 flights.grp$ls()
 
-## ---- results="markup"--------------------------------------------------------
+## ----results="markup"---------------------------------------------------------
 weather_ds <- flights.grp[["weather"]]
 weather_ds_type <- weather_ds$get_type()
 weather_ds_type$get_class()
@@ -62,7 +62,7 @@ h5attr_names(flights.grp[["wind_dir"]])
 ## -----------------------------------------------------------------------------
 h5attr(flights.grp[["wind_dir"]], "colnames")
 
-## ---- results="markup"--------------------------------------------------------
+## ----results="markup"---------------------------------------------------------
 weather_ds[1:5]
 wind_dir_ds <- flights.grp[["wind_dir"]]
 wind_dir_ds[1:3,]
@@ -71,7 +71,7 @@ wind_dir_ds[1:3,]
 wind_dir_ds[1,] <- rep(1, 24)
 wind_dir_ds[1,]
 
-## ---- results="markup"--------------------------------------------------------
+## ----results="markup"---------------------------------------------------------
 wind_dir_ds$get_fill_value()	
 wind_dir_ds[1, 25] <- 1
 wind_dir_ds[1:2, ]
@@ -80,7 +80,7 @@ wind_dir_ds[1:2, ]
 flights.grp$link_delete("wind_dir")
 flights.grp$ls()
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  file.h5$close_all()
 
 ## -----------------------------------------------------------------------------
@@ -144,7 +144,7 @@ logical_example$get_values()
 cpd_example <- H5T_COMPOUND$new(c("Double_col", "Int_col", "Logical_col"), dtypes=list(h5types$H5T_NATIVE_DOUBLE, h5types$H5T_NATIVE_INT,
                                                                                logical_example))
 
-## ---- results="markup"--------------------------------------------------------
+## ----results="markup"---------------------------------------------------------
 cpd_example$get_cpd_labels()
 cpd_example$get_cpd_classes()
 cpd_example$get_cpd_types()
@@ -171,6 +171,6 @@ obj_empty$Array
 ## -----------------------------------------------------------------------------
 vlen_example <- H5T_VLEN$new(dtype_base=cpd_several)
 
-## ---- eval=TRUE, FALSE, include=FALSE-----------------------------------------
+## ----eval=TRUE, FALSE, include=FALSE------------------------------------------
 file.h5$close_all()
 

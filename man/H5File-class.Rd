@@ -199,8 +199,7 @@ Also note that this function implements the HDF5-API function H5Dcreate2 and H5D
 \strong{Parameters}
 \describe{
 \item{name}{The name of the new dataset. If missing, an anonymous dataset is created}
-\item{robj}{An R-object to take as a template for creating the dataset. Either \code{robj} or both \code{dtype} and {space}
-have to be provided}
+\item{robj}{An R-object to take as a template for creating the dataset. Either \code{robj} or both \code{dtype} and \code{space} have to be provided}
 \item{dtype}{The datatype to use for the creation of the object. Can be null if \code{robj} is given.}
 \item{space}{The space to use for the object creation. Can be null if \code{robj} is given. Otherwise an object of type \code{H5S} which specifies the dimensions of the dataset.}
 \item{dims}{Dimension of the new dataset; used if \code{space} is \code{NULL}. overwrite the dimension guessed from \code{robj}
