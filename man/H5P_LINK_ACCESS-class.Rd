@@ -26,32 +26,32 @@ Create a new class of type \code{\link{H5P_LINK_ACCESS}}
 \item{\code{set_nlinks(nlinks)}}{
 
 This function implements the HDF5-API function H5Pset_nlinks.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_SET_NLINKS} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{get_nlinks()}}{
 
 This function implements the HDF5-API function H5Pget_nlinks.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_GET_NLINKS} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{set_elink_prefix(elink_prefix)}}{
 
 This function implements the HDF5-API function H5Pset_elink_prefix.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_SET_ELINK_PREFIX} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{get_elink_prefix()}}{
 
 This function implements the HDF5-API function H5Pget_elink_prefix.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_GET_ELINK_PREFIX} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{set_elink_acc_flags(elink_acc_flags = h5const$H5F_ACC_RDWR)}}{
 
 This function implements the HDF5-API function H5Pset_elink_acc_flags.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_SET_ELINK_ACC_FLAGS} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{get_elink_acc_flags()}}{
 
 This function implements the HDF5-API function H5Pget_elink_acc_flags.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_GET_ELINK_ACC_FLAGS} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 }}
 
 \seealso{

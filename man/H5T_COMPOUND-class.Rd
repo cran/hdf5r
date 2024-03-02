@@ -32,7 +32,7 @@ so that datatypes are aligned with memory addresses. If \code{NULL}, inferred au
 \item{\code{pack()}}{
 
 This function implements the HDF5-API function H5Tpack.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5T_PACK} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_t.html} for details.}
 
 \item{\code{get_cpd_types()}}{
 

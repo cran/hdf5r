@@ -19,7 +19,7 @@ Convert a text description to a datatype
 }
 \details{
 Converts a text to a datatype using the HDF5 function H5LT_text_to_dtype. Documentation can be found at 
-\url{https://portal.hdfgroup.org/display/HDF5/H5LT_TEXT_TO_DTYPE}.
+\url{https://docs.hdfgroup.org/hdf5/develop/group___h5_l_t.html}.
 }
 \author{
 Holger Hoefling

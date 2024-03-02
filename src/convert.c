@@ -259,7 +259,7 @@ SEXP RToH5_INTEGER(SEXP _Robj, hid_t dtype_id, R_xlen_t nelem) {
   SEXP Rval;
 
   if(nelem != XLENGTH(_Robj)) {
-    error("Length of integer vector not as expected: Actual: %" PRId64 "; Expected %" PRId64 "\n", XLENGTH(_Robj), nelem);
+    error("Length of integer vector not as expected: Actual: %ld; Expected %ld\n", (long) XLENGTH(_Robj), (long) nelem);
   }
 
   switch(TYPEOF(_Robj)) {

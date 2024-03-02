@@ -43,27 +43,27 @@ Prints available methods on the screen}
 \item{\code{get_file_id()}}{
 
 This function implements the HDF5-API function H5Iget_file_id.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_GET_FILE_ID} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.}
 
 \item{\code{get_obj_type()}}{
 
 This function implements the HDF5-API function H5Iget_type.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_GET_TYPE} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.}
 
 \item{\code{get_ref()}}{
 
 This function implements the HDF5-API function H5Iget_ref.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_GET_REF} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.}
 
 \item{\code{inc_ref()}}{
 
 This function implements the HDF5-API function H5Iinc_ref.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_INC_REF} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.}
 
 \item{\code{dec_ref()}}{
 
 This function implements the HDF5-API function H5Idec_ref.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_DEC_REF} for details.}
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.}
 
 \item{\code{id()}}{
 
@@ -72,7 +72,7 @@ Returns the id of the object}
 \item{\code{is_valid()}}{
 
 This function implements the HDF5-API function H5Iis_valid.
-Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5I_IS_VALID} for details.
+Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_i.html} for details.
 Additionally, the R-object representing the HDF5-id can be invalidated as well. In this
 case, the class id is set to \code{NA} and \code{is_valid} returns \code{FALSE}.}
 

@@ -72,7 +72,7 @@ wind_dir_ds[1,] <- rep(1, 24)
 wind_dir_ds[1,]
 
 ## ----results="markup"---------------------------------------------------------
-wind_dir_ds$get_fill_value()	
+wind_dir_ds$get_fill_value()
 wind_dir_ds[1, 25] <- 1
 wind_dir_ds[1:2, ]
 
@@ -161,7 +161,7 @@ cplx_example$get_cpd_classes()
 array_example <- H5T_ARRAY$new(dims=c(3,4), dtype_base=h5types$H5T_NATIVE_INT)
 cpd_several <- H5T_COMPOUND$new(c("STRING_fixed", "Double", "Complex", "Array"),
                                 dtypes=list(str_fixed_len, h5types$H5T_NATIVE_DOUBLE, cplx_example, array_example))
-cat(cpd_several$to_text())                                                                                 
+cat(cpd_several$to_text())
 
 ## -----------------------------------------------------------------------------
 obj_empty <- create_empty(1, cpd_several)

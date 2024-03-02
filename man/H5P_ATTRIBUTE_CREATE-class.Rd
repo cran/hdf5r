@@ -25,11 +25,11 @@ Create a new class of type \code{\link{H5P_ATTRIBUTE_CREATE}}
 
 \item{\code{set_char_encoding(encoding = h5const$H5T_CSET_UTF8)}}{
 
-This function implements the HDF5-API function H5Pset_char_encoding. Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_SET_CHAR_ENCODING} for details.}
+This function implements the HDF5-API function H5Pset_char_encoding. Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 
 \item{\code{get_char_encoding()}}{
 
-This function implements the HDF5-API function H5Pget_char_encoding. Please see the documentation at \url{https://portal.hdfgroup.org/display/HDF5/H5P_GET_CHAR_ENCODING} for details.}
+This function implements the HDF5-API function H5Pget_char_encoding. Please see the documentation at \url{https://docs.hdfgroup.org/hdf5/develop/group___h5_p.html} for details.}
 }}
 
 \seealso{
