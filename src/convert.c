@@ -407,14 +407,14 @@ SEXP RToH5_FLOAT(SEXP _Robj, hid_t dtype_id, R_xlen_t nelem) {
 	error("Error when comparing if is native double\n");
       }
       if(isNativeDouble) { // size of a regular double, no conversion necessary
-	return(_Robj);
+	    return(_Robj);
       }
       // in case of long double, might need 16 bytes
       int alloc_size = (dtype_size > sizeof(double) ? dtype_size : sizeof(double));
       PROTECT(Rval = NEW_RAW(nelem * alloc_size));
       memcpy(VOIDPTR(Rval), VOIDPTR(_Robj), nelem * sizeof(double));
-      H5Tconvert_with_warning(H5T_NATIVE_DOUBLE, dtype_id, nelem, VOIDPTR(Rval)); 
-      SETLENGTH(Rval, XLENGTH(_Robj) * dtype_size);
+      H5Tconvert_with_warning(H5T_NATIVE_DOUBLE, dtype_id, nelem, VOIDPTR(Rval));
+      Rval=Rf_xlengthgets(Rval, XLENGTH(_Robj) * dtype_size);
       UNPROTECT(1);
       return(Rval);	    
     }
@@ -795,9 +795,11 @@ SEXP H5ToR_Post_RComplex(SEXP _Robj, hid_t dtype_id, R_xlen_t nelem, int flags) 
 
   // if its size is larger than double, need to set the length
   if(dtype_size > sizeof(double)) {
-    SETLENGTH(_Robj, nelem);
+    return(Rf_xlengthgets(res, nelem));
   }
-  return(res);
+  else {
+    return(res);
+  }
 
 }
 
@@ -1035,9 +1037,11 @@ SEXP H5ToR_Post_FLOAT(SEXP _Robj, hid_t dtype_id, R_xlen_t nelem, int flags) {
     H5Tconvert_with_warning(dtype_id, H5T_NATIVE_DOUBLE, nelem, VOIDPTR(_Robj)); // do it in place; from the way it is used, we know it is safe
     // if its size is larger than double, need to set the length
     if(dtype_size > sizeof(double)) {
-      SETLENGTH(_Robj, nelem);
+      return(Rf_xlengthgets(_Robj, nelem));
     }
-    return(_Robj);
+    else {
+      return(_Robj);
+    }
   }
 
 }
@@ -1583,7 +1587,7 @@ SEXP R_reorder(SEXP R_src, SEXP R_num_rows, SEXP R_num_cols, SEXP R_item_size, S
   hsize_t item_size = SEXP_to_longlong(R_item_size, 0);
 
   SEXP R_helper = PROTECT(RToH5(R_new_order, H5T_NATIVE_ULLONG, num_rows));
-  hsize_t* new_order = (unsigned long long *) VOIDPTR(R_helper);
+  hsize_t* new_order = (hsize_t*) VOIDPTR(R_helper);
   
   SEXP R_dst = PROTECT(duplicate(R_src));
   reorder(VOIDPTR(R_dst), VOIDPTR(R_src), num_rows, num_cols, item_size, new_order);
@@ -2193,8 +2197,7 @@ bool is_robj_array(SEXP _Robj, hid_t dtype_id) {
 SEXP string_to_UTF8(SEXP _str) {
   SEXP res, s, t;
   
-  t = s = PROTECT(allocList(2));
-  SET_TYPEOF(s, LANGSXP);
+  t = s = PROTECT(LCONS(R_NilValue, allocList(1)));;
   SETCAR(t, install("enc2utf8")); t = CDR(t);
   SETCAR(t,  _str); t = CDR(t);
   PROTECT(res = eval(s, R_GlobalEnv));
@@ -2280,9 +2283,9 @@ void* VOIDPTR(SEXP x) {
   case RAWSXP:
     return((void *) RAW(x));
   case STRSXP:
-    return((void *) STRING_PTR(x));
+    return((void *) STRING_PTR_RO(x));
   case VECSXP:
-    return((void *) VECTOR_PTR(x));
+    error("Cannot convert VECSXP to voidptr\n");
   default:
     error("Type cannot be converted to voidptr\n");
   }
