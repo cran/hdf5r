@@ -447,7 +447,7 @@ doesn’t exist yet).</p>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>file.h5 <span class="ot">&lt;-</span> H5File<span class="sc">$</span><span class="fu">new</span>(test_filename, <span class="at">mode =</span> <span class="st">&quot;w&quot;</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>file.h5</span></code></pre></div>
 <pre><code>## Class: H5File
-## Filename: /tmp/RtmpuJKGs0/file598fa44efd95c.h5
+## Filename: /tmp/RtmpmUJ35B/file33f4917e9f5a7.h5
 ## Access type: H5F_ACC_RDWR</code></pre>
 <p>Now that we have this, we will create 2 groups, one for the
 <strong>mtcars</strong> dataset and one for the
@@ -728,7 +728,7 @@ as well.</p>
 <p>HDF5 provides a very wide range of tools. Describing it here would
 certainly be a task that is too large for this vignette. For a complete
 overview on what HDF5 can do, the reader should have a look at the <a href="https://www.hdfgroup.org/solutions/hdf5/">HDF5 website</a> and the
-documentation that is listed there as well as specifically the <a href="https://docs.hdfgroup.org/hdf5/v1_10/index.html">reference
+documentation that is listed there as well as specifically the <a href="https://support.hdfgroup.org/documentation/hdf5/latest/_r_m.html">reference
 manual</a>. Most API-functions that are referenced there are already
 implemented (and any other missing functionality that is feasible will
 hopefully follow soon).</p>
@@ -794,7 +794,7 @@ compression and nbit as well as compression</p>
 <span id="cb47-4"><a href="#cb47-4" tabindex="-1"></a>uint2_ds_none<span class="sc">$</span><span class="fu">get_storage_size</span>()</span></code></pre></div>
 <pre><code>## [1] 35
 ## [1] 26
-## [1] 56
+## [1] 55
 ## [1] 100</code></pre>
 <p>and we see that in the case of random data, not surprisingly, the
 nbit filter alone is the most efficient. Using compression on the
