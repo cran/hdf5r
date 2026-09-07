@@ -1,3 +1,15 @@
+# hdf5r 1.3.15
+
+- Fix configuration with Debian HDF5 installations that use serial library names.
+
+# hdf5r 1.3.14
+
+- Fix a garbage collection protection issue during HDF5 complex conversion.
+
+# hdf5r 1.3.13
+
+- Add HDF5 2.x compatibility fixes.
+
 # hdf5r 1.3.12
 
 - Fix compilation warning #232.

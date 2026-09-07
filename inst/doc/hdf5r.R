@@ -81,7 +81,7 @@ flights.grp$link_delete("wind_dir")
 flights.grp$ls()
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  file.h5$close_all()
+# file.h5$close_all()
 
 ## -----------------------------------------------------------------------------
 uint2_dt <- h5types$H5T_NATIVE_UINT32$set_size(1)$set_precision(2)$set_sign(h5const$H5T_SGN_NONE)
